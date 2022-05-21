@@ -12,7 +12,7 @@ import UserPage from './pages/UserPage';
 const Router = () => {
   return (
     <BrowserRouter>
-      <Navigation />
+      <Navigation isLoggedIn={false} />
       <Routes>
         <Route exact path='/' element={<Home />} />
         <Route path='/login' element={<Login />} />
