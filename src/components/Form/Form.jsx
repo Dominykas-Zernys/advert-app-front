@@ -1,10 +1,19 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import * as S from './Form.style';
 
-const Form = (props) => {
-  return <div>Form</div>;
+const Form = ({ children, submitHandler, type }) => {
+  return (
+    <S.Form className={type} onSubmit={submitHandler}>
+      {children}
+    </S.Form>
+  );
 };
 
-Form.propTypes = {};
+Form.propTypes = {
+  children: PropTypes.node.isRequired,
+  submitHandler: PropTypes.func.isRequired,
+  type: PropTypes.string.isRequired,
+};
 
 export default Form;

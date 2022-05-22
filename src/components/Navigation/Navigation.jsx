@@ -9,6 +9,9 @@ const Navigation = (props) => {
     <S.Header>
       <Wrapper>
         <S.Nav>
+          <S.ImgWrapper>
+            <img src='img/logo.png' alt='Advertise Yourself logo' />
+          </S.ImgWrapper>
           <NavLink activeclassname='active' to='/'>
             Home
           </NavLink>

@@ -1,7 +1,8 @@
 import React from 'react';
+import Main from '../components/Main/Main';
 
 const UserPage = () => {
-  return <div>UserPage</div>;
+  return <Main>UserPage</Main>;
 };
 
 export default UserPage;

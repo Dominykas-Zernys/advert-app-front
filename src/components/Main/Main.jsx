@@ -1,10 +1,16 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import Wrapper from '../Wrapper/Wrapper';
+import * as S from './Main.style';
 
-const Main = (props) => {
-  return <div>Main</div>;
+const Main = ({ children }) => {
+  return (
+    <S.Main>
+      <Wrapper>{children}</Wrapper>
+    </S.Main>
+  );
 };
 
-Main.propTypes = {};
+Main.propTypes = { children: PropTypes.node };
 
 export default Main;
