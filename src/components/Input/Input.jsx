@@ -1,12 +1,16 @@
-import React from 'react';
+import React, { useState } from 'react';
 import PropTypes from 'prop-types';
 import * as S from './Input.style';
 
-const Input = ({ labelText, type }) => {
+const Input = ({ labelText, type, inputValue, setInputValue }) => {
   return (
     <S.InputWrapper>
       <S.Label>{labelText}</S.Label>
-      <S.Input type={type} />
+      <S.Input
+        value={inputValue}
+        type={type}
+        onChange={(e) => setInputValue(e.target.value)}
+      />
     </S.InputWrapper>
   );
 };

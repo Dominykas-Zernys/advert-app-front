@@ -3,6 +3,7 @@ import PropTypes from 'prop-types';
 import * as S from './Navigation.style';
 import Wrapper from '../Wrapper/Wrapper';
 import { NavLink } from 'react-router-dom';
+import PageButton from '../../UI/PageButton/PageButton';
 
 const Navigation = (props) => {
   return (
@@ -29,9 +30,18 @@ const Navigation = (props) => {
             </>
           )}
           {props.isLoggedIn && (
-            <NavLink activeclassname='active' to='/user'>
-              User Panel
-            </NavLink>
+            <>
+              <NavLink activeclassname='active' to='/user'>
+                User Panel
+              </NavLink>
+              <PageButton
+                handleClick={() => {
+                  console.log('logout');
+                }}
+              >
+                Logout
+              </PageButton>
+            </>
           )}
         </S.Nav>
       </Wrapper>

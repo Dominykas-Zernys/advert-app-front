@@ -9,4 +9,5 @@ export const Container = styled.div`
   margin: auto;
   border-radius: 3rem;
   padding: 3rem;
+  position: relative;
 `;

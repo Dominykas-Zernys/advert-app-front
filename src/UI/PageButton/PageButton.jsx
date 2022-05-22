@@ -2,10 +2,13 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import * as S from './PageButton.style';
 
-const PageButton = ({ children }) => {
-  return <S.PageBtn>{children}</S.PageBtn>;
+const PageButton = ({ children, handleClick }) => {
+  return <S.PageBtn onClick={handleClick}>{children}</S.PageBtn>;
 };
 
-PageButton.propTypes = { children: PropTypes.string.isRequired };
+PageButton.propTypes = {
+  children: PropTypes.string.isRequired,
+  handleClick: PropTypes.func,
+};
 
 export default PageButton;

@@ -10,6 +10,13 @@ export const Nav = styled.nav`
   display: flex;
   justify-content: flex-end;
 
+  & button {
+    border-radius: 2rem;
+    padding: 0.85rem 1rem;
+    margin: 0;
+    align-self: center;
+  }
+
   & a {
     font-size: 1.1rem;
     color: ${pageColors.text};
@@ -33,7 +40,7 @@ export const Nav = styled.nav`
 
   .active {
     border-bottom: 2px solid ${pageColors.primary};
-    transition: all 0.5s;
+    transition: border-bottom 0.5s;
     font-weight: 900;
   }
 `;
