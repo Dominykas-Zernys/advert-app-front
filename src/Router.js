@@ -6,13 +6,14 @@ import Advert from './pages/Advert';
 import ErrorPage from './pages/ErrorPage';
 import Home from './pages/Home';
 import Login from './pages/Login';
+import NewAdvert from './pages/NewAdvert';
 import Register from './pages/Register';
 import UserPage from './pages/UserPage';
 
 const Router = () => {
   return (
     <BrowserRouter>
-      <Navigation isLoggedIn={false} />
+      <Navigation />
       <Routes>
         <Route exact path='/' element={<Home />} />
         <Route path='/login' element={<Login />} />
@@ -20,6 +21,7 @@ const Router = () => {
         <Route path='/user' element={<UserPage />} />
         <Route path='/about' element={<About />} />
         <Route path='/advert' element={<Advert />} />
+        <Route path='/create-advert' element={<NewAdvert />} />
         <Route path='*' element={<ErrorPage />} />
       </Routes>
     </BrowserRouter>

@@ -1,11 +1,13 @@
-import React from 'react';
-import PropTypes from 'prop-types';
+import React, { useContext } from 'react';
 import * as S from './Navigation.style';
 import Wrapper from '../Wrapper/Wrapper';
 import { NavLink } from 'react-router-dom';
 import PageButton from '../../UI/PageButton/PageButton';
+import { AuthContext } from '../../helpers/AuthContext';
 
-const Navigation = (props) => {
+const Navigation = () => {
+  const { isLoggedIn, logout } = useContext(AuthContext);
+
   return (
     <S.Header>
       <Wrapper>
@@ -19,7 +21,7 @@ const Navigation = (props) => {
           <NavLink activeclassname='active' to='/about'>
             About Us
           </NavLink>
-          {!props.isLoggedIn && (
+          {!isLoggedIn && (
             <>
               <NavLink activeclassname='active' to='/register'>
                 Register
@@ -29,14 +31,17 @@ const Navigation = (props) => {
               </NavLink>
             </>
           )}
-          {props.isLoggedIn && (
+          {isLoggedIn && (
             <>
               <NavLink activeclassname='active' to='/user'>
                 User Panel
               </NavLink>
+              <NavLink activeclassname='active' to='/create-advert'>
+                Create Advert
+              </NavLink>
               <PageButton
                 handleClick={() => {
-                  console.log('logout');
+                  logout();
                 }}
               >
                 Logout
@@ -48,7 +53,5 @@ const Navigation = (props) => {
     </S.Header>
   );
 };
-
-Navigation.propTypes = {};
 
 export default Navigation;

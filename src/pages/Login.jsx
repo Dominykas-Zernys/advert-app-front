@@ -1,9 +1,10 @@
-import React, { useState } from 'react';
-import { Link } from 'react-router-dom';
+import React, { useContext, useEffect, useState } from 'react';
+import { Link, useNavigate } from 'react-router-dom';
 import Container from '../components/Container/Container';
 import Form from '../components/Form/Form';
 import Input from '../components/Input/Input';
 import Main from '../components/Main/Main';
+import { AuthContext } from '../helpers/AuthContext';
 import { fetchPost } from '../helpers/fetchFunctions';
 import {
   areThereEmptyFields,
@@ -24,6 +25,15 @@ const Login = () => {
   // States for info text
   const [submitFail, setSubmitFail] = useState(false);
   const [failText, setFailText] = useState('');
+
+  // Hooks for successful login and redirect
+  const { isLoggedIn, login } = useContext(AuthContext);
+  const navigate = useNavigate();
+
+  // Redirect to homepage if user is already logged in
+  useEffect(() => {
+    isLoggedIn && navigate('../', { replace: true });
+  }, [isLoggedIn]);
 
   // Function to restart info text
   function restartInfoText() {
@@ -50,7 +60,8 @@ const Login = () => {
       return;
     }
     restartStates([setEmail, setPassword]);
-    console.log(postRes.msg);
+    login(postRes.msg.token, postRes.msg.username);
+    navigate('../', { replace: true });
   }
 
   return (

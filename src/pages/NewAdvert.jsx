@@ -1,9 +1,8 @@
 import React, { useContext, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
-import Main from '../components/Main/Main';
 import { AuthContext } from '../helpers/AuthContext';
 
-const UserPage = () => {
+const NewAdvert = () => {
   // Hooks for redirection if user not logged in
   const { isLoggedIn } = useContext(AuthContext);
   const navigate = useNavigate();
@@ -13,7 +12,7 @@ const UserPage = () => {
     !isLoggedIn && navigate('/login', { replace: true });
   }, [isLoggedIn]);
 
-  return <Main>UserPage</Main>;
+  return <div>NewAdvert</div>;
 };
 
-export default UserPage;
+export default NewAdvert;
