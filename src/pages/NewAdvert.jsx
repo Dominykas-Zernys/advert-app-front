@@ -114,7 +114,7 @@ const NewAdvert = () => {
               { value: 2, text: 'option du' },
             ]}
           />
-          <Text textIndent={false} fontSize='1rem'>
+          <Text center={true} textIndent={false} fontSize='1rem'>
             Don't know which style you want your advert to have? Check out all styles on our <Link to='/about'>About</Link> page
           </Text>
           <PageButton>Let's go!</PageButton>

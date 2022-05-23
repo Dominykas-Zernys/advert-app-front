@@ -3,7 +3,7 @@ import { pageColors } from '../../helpers/pageColors';
 
 export const P = styled.p`
   font-size: ${(props) => props.fontSize};
-  text-align: justify;
+  text-align: ${(props) => (props.center ? 'center' : 'justify')};
   text-indent: ${(props) => (props.textIndent ? '2rem' : '0')};
   margin: 2rem 1rem;
   line-height: 2rem;

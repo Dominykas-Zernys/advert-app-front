@@ -9,6 +9,11 @@ export const InputWrapper = styled.div`
 
 export const Label = styled.label`
   margin-bottom: 0.5rem;
+
+  & .blue-text {
+    font-weight: 900;
+    color: ${pageColors.text};
+  }
 `;
 
 export const Input = styled.input`
