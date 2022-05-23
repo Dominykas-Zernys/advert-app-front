@@ -6,6 +6,6 @@ const Title = ({ children }) => {
   return <S.H1>{children}</S.H1>;
 };
 
-Title.propTypes = { children: PropTypes.string };
+Title.propTypes = { children: PropTypes.node };
 
 export default Title;

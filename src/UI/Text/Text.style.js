@@ -2,10 +2,11 @@ import styled from 'styled-components';
 import { pageColors } from '../../helpers/pageColors';
 
 export const P = styled.p`
-  font-size: 1.15rem;
+  font-size: ${(props) => props.fontSize};
   text-align: justify;
-  text-indent: 2rem;
+  text-indent: ${(props) => (props.textIndent ? '2rem' : '0')};
   margin: 2rem 1rem;
+  line-height: 2rem;
 
   & a {
     border-bottom: 1px solid ${pageColors.primary};

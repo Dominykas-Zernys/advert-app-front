@@ -25,15 +25,6 @@ const Register = () => {
   const [submitFail, setSubmitFail] = useState(false);
   const [failText, setFailText] = useState('');
 
-  // // Hooks for redirection if user is already logged in
-  // const { isLoggedIn } = useContext(AuthContext);
-  // const navigate = useNavigate();
-
-  // // Redirect to homepage if user is already logged in
-  // useEffect(() => {
-  //   isLoggedIn && navigate('../', { replace: true });
-  // }, [isLoggedIn]);
-
   // Function to restart info text
   function restartInfoText() {
     restartStates([setSubmitSuccess, setSubmitFail], false);
@@ -70,7 +61,7 @@ const Register = () => {
 
   return (
     <Main>
-      <Container width='60%'>
+      <Container width='62%'>
         <Title>Register</Title>
         <Text>
           In order to post new adverts, you have to register as a new user. This will only take a few minutes. If you already have an account, you can login{' '}

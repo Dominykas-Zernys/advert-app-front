@@ -13,7 +13,7 @@ const About = () => {
 
   return (
     <Main>
-      <Container width='70%'>
+      <Container width='85%'>
         <Title>About Us</Title>
         <Text>
           Who are we? We are whatever you decide for us to be. Because this page is for our users to place their adverts, you - the user - create the content of
@@ -28,7 +28,7 @@ const About = () => {
           </Link>{' '}
           you will find all the adverts users have placed on 'Advertise yourself'. You don't need to register or login to see the adverts - we want our content
           to reach the widest audience possible, so all the adverts are accessible to everyone. If you are looking for something specific, you can always use
-          the filter or search options to find something for your needs. The home page only shows the short version of adverts - if you want to find out more
+          the filter or search function to find something for your needs. The home page only shows the short version of adverts - if you want to find out more
           about any specific advert, click on it to expand.
         </Text>
         <Subtitle>Want to place an advert?</Subtitle>

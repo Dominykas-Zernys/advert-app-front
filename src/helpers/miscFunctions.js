@@ -11,6 +11,10 @@ export function areThereEmptyFields(fieldArr) {
 
 // Format text from backend JOI validation to display as info text
 export function formatInfoText(infoText) {
-  const textNoQuotes = infoText.replaceAll('"', '');
+  let textToReturn = infoText;
+  if (infoText.split(' ')[0] === '"shortDescription"') {
+    textToReturn = infoText.replaceAll('shortDescription', 'Short description');
+  }
+  const textNoQuotes = textToReturn.replaceAll('"', '');
   return textNoQuotes.charAt(0).toUpperCase() + textNoQuotes.slice(1) + '!';
 }

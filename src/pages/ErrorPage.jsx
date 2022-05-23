@@ -6,7 +6,7 @@ import Title from '../UI/Title/Title';
 const ErrorPage = () => {
   return (
     <Main>
-      <Container width='40%'>
+      <Container width='50%'>
         <div className='error-wrapper'>
           <Title>404 Not found</Title>
         </div>

@@ -23,13 +23,8 @@ const Login = () => {
   const [failText, setFailText] = useState('');
 
   // Hooks for successful login and redirect
-  const { isLoggedIn, login } = useContext(AuthContext);
+  const { login } = useContext(AuthContext);
   const navigate = useNavigate();
-
-  // // Redirect to homepage if user is already logged in
-  // useEffect(() => {
-  //   isLoggedIn && navigate('../', { replace: true });
-  // }, [isLoggedIn]);
 
   // Function to restart info text
   function restartInfoText() {
@@ -62,7 +57,7 @@ const Login = () => {
 
   return (
     <Main>
-      <Container width='40%'>
+      <Container width='50%'>
         <Title>Login</Title>
         <Text>
           In order to post new adverts, please login. If you don't have an account, you can register <Link to='/register'>here</Link>.
