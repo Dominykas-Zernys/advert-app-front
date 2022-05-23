@@ -1,6 +1,8 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import Navigation from './components/Navigation/Navigation';
+import ProtectedRoute from './helpers/ProtectedRoute';
+import RedirectRoute from './helpers/redirectRoute';
 import About from './pages/About';
 import Advert from './pages/Advert';
 import ErrorPage from './pages/ErrorPage';
@@ -16,12 +18,22 @@ const Router = () => {
       <Navigation />
       <Routes>
         <Route exact path='/' element={<Home />} />
-        <Route path='/login' element={<Login />} />
-        <Route path='/register' element={<Register />} />
-        <Route path='/user' element={<UserPage />} />
+        <Route path='/login' element={<RedirectRoute />}>
+          <Route path='/login' element={<Login />} />
+        </Route>
+        <Route path='/register' element={<RedirectRoute />}>
+          <Route path='/register' element={<Register />} />
+        </Route>
+        <Route path='/user' element={<ProtectedRoute />}>
+          <Route path='/user' element={<UserPage />} />
+        </Route>
         <Route path='/about' element={<About />} />
-        <Route path='/advert' element={<Advert />} />
-        <Route path='/create-advert' element={<NewAdvert />} />
+        <Route path='/advert' element={<ProtectedRoute />}>
+          <Route path='/advert' element={<Advert />} />
+        </Route>
+        <Route path='/create-advert' element={<ProtectedRoute />}>
+          <Route path='/create-advert' element={<NewAdvert />} />
+        </Route>
         <Route path='*' element={<ErrorPage />} />
       </Routes>
     </BrowserRouter>

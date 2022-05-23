@@ -8,6 +8,7 @@ function App() {
   // Values for AuthContext
   const [isLoggedIn, setIsLoggedIn] = useState(false);
   const [username, setUsername] = useState('');
+  const [checkingForToken, setCheckingForToken] = useState(true);
 
   function login(token, username) {
     setIsLoggedIn(true);
@@ -26,21 +27,23 @@ function App() {
   // Check if user is logged in after page refresh
 
   async function checkForToken() {
-    const token = await localStorage.getItem('token');
-    const username = await localStorage.getItem('username');
+    const token = localStorage.getItem('token');
+    const username = localStorage.getItem('username');
     if (token && username) {
       login(token, username);
+      setCheckingForToken(false);
+      return;
     }
+    setCheckingForToken(false);
   }
 
   useEffect(() => {
-    console.log('check');
     checkForToken();
   }, []);
 
   return (
     <div className='App'>
-      <AuthContext.Provider value={{ isLoggedIn, login, logout }}>
+      <AuthContext.Provider value={{ isLoggedIn, login, logout, checkingForToken }}>
         <Router />
       </AuthContext.Provider>
     </div>

@@ -6,11 +6,7 @@ import Input from '../components/Input/Input';
 import Main from '../components/Main/Main';
 import { AuthContext } from '../helpers/AuthContext';
 import { fetchPost } from '../helpers/fetchFunctions';
-import {
-  areThereEmptyFields,
-  formatInfoText,
-  restartStates,
-} from '../helpers/miscFunctions';
+import { areThereEmptyFields, formatInfoText, restartStates } from '../helpers/miscFunctions';
 import { pageColors } from '../helpers/pageColors';
 import InfoText from '../UI/InfoText/InfoText';
 import PageButton from '../UI/PageButton/PageButton';
@@ -30,10 +26,10 @@ const Login = () => {
   const { isLoggedIn, login } = useContext(AuthContext);
   const navigate = useNavigate();
 
-  // Redirect to homepage if user is already logged in
-  useEffect(() => {
-    isLoggedIn && navigate('../', { replace: true });
-  }, [isLoggedIn]);
+  // // Redirect to homepage if user is already logged in
+  // useEffect(() => {
+  //   isLoggedIn && navigate('../', { replace: true });
+  // }, [isLoggedIn]);
 
   // Function to restart info text
   function restartInfoText() {
@@ -69,31 +65,14 @@ const Login = () => {
       <Container width='40%'>
         <Title>Login</Title>
         <Text>
-          In order to post new adverts, please login. If you don't have an
-          account, you can register <Link to='/register'>here</Link>.
+          In order to post new adverts, please login. If you don't have an account, you can register <Link to='/register'>here</Link>.
         </Text>
-        <Form
-          type='login'
-          submitHandler={formSubmit}
-          changeHandler={restartInfoText}
-        >
-          <Input
-            value={email}
-            setInputValue={setEmail}
-            type='text'
-            labelText='Enter your email:'
-          />
-          <Input
-            value={password}
-            setInputValue={setPassword}
-            type='password'
-            labelText='Enter your password:'
-          />
+        <Form type='login' submitHandler={formSubmit} changeHandler={restartInfoText}>
+          <Input value={email} setInputValue={setEmail} type='text' labelText='Enter your email:' />
+          <Input value={password} setInputValue={setPassword} type='password' labelText='Enter your password:' />
           <PageButton>Let's go!</PageButton>
         </Form>
-        {submitFail && (
-          <InfoText color={pageColors.danger}>{failText}</InfoText>
-        )}
+        {submitFail && <InfoText color={pageColors.danger}>{failText}</InfoText>}
       </Container>
     </Main>
   );

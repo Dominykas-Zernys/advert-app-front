@@ -6,11 +6,7 @@ import Input from '../components/Input/Input';
 import Main from '../components/Main/Main';
 import { AuthContext } from '../helpers/AuthContext';
 import { fetchPost } from '../helpers/fetchFunctions';
-import {
-  areThereEmptyFields,
-  formatInfoText,
-  restartStates,
-} from '../helpers/miscFunctions';
+import { areThereEmptyFields, formatInfoText, restartStates } from '../helpers/miscFunctions';
 import { pageColors } from '../helpers/pageColors';
 import InfoText from '../UI/InfoText/InfoText';
 import PageButton from '../UI/PageButton/PageButton';
@@ -29,14 +25,14 @@ const Register = () => {
   const [submitFail, setSubmitFail] = useState(false);
   const [failText, setFailText] = useState('');
 
-  // Hooks for redirection if user is already logged in
-  const { isLoggedIn } = useContext(AuthContext);
-  const navigate = useNavigate();
+  // // Hooks for redirection if user is already logged in
+  // const { isLoggedIn } = useContext(AuthContext);
+  // const navigate = useNavigate();
 
-  // Redirect to homepage if user is already logged in
-  useEffect(() => {
-    isLoggedIn && navigate('../', { replace: true });
-  }, [isLoggedIn]);
+  // // Redirect to homepage if user is already logged in
+  // useEffect(() => {
+  //   isLoggedIn && navigate('../', { replace: true });
+  // }, [isLoggedIn]);
 
   // Function to restart info text
   function restartInfoText() {
@@ -77,39 +73,14 @@ const Register = () => {
       <Container width='60%'>
         <Title>Register</Title>
         <Text>
-          In order to post new adverts, you have to register as a new user. This
-          will only take a few minutes. If you already have an account, you can
-          login <Link to='/login'>here</Link>.
+          In order to post new adverts, you have to register as a new user. This will only take a few minutes. If you already have an account, you can login{' '}
+          <Link to='/login'>here</Link>.
         </Text>
-        <Form
-          type='register'
-          submitHandler={formSubmit}
-          changeHandler={restartInfoText}
-        >
-          <Input
-            inputValue={email}
-            setInputValue={setEmail}
-            type='email'
-            labelText='Enter your email:'
-          />
-          <Input
-            inputValue={username}
-            setInputValue={setUsername}
-            type='text'
-            labelText='Create your username:'
-          />
-          <Input
-            inputValue={password}
-            setInputValue={setPassword}
-            type='password'
-            labelText='Create a password:'
-          />
-          <Input
-            inputValue={repeatPassword}
-            setInputValue={setRepeatPassword}
-            type='password'
-            labelText='Repeat the password:'
-          />
+        <Form type='register' submitHandler={formSubmit} changeHandler={restartInfoText}>
+          <Input inputValue={email} setInputValue={setEmail} type='email' labelText='Enter your email:' />
+          <Input inputValue={username} setInputValue={setUsername} type='text' labelText='Create your username:' />
+          <Input inputValue={password} setInputValue={setPassword} type='password' labelText='Create a password:' />
+          <Input inputValue={repeatPassword} setInputValue={setRepeatPassword} type='password' labelText='Repeat the password:' />
           <PageButton>Let's go!</PageButton>
         </Form>
         {submitSuccess && (
@@ -117,9 +88,7 @@ const Register = () => {
             Register successful! You can now login <Link to='/login'>here</Link>
           </InfoText>
         )}
-        {submitFail && (
-          <InfoText color={pageColors.danger}>{failText}</InfoText>
-        )}
+        {submitFail && <InfoText color={pageColors.danger}>{failText}</InfoText>}
       </Container>
     </Main>
   );
