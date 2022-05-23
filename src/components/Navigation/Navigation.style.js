@@ -52,6 +52,8 @@ export const ImgWrapper = styled.div`
   position: relative;
   left: -2rem;
   top: 3px;
+  border-radius: 3rem;
+  overflow: hidden;
 
   & img {
     width: 100%;
