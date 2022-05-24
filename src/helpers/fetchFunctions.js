@@ -10,3 +10,12 @@ export async function fetchPost(endpoint, objectToSend, token) {
   const resInJson = await res.json();
   return resInJson;
 }
+
+export async function fetchGet(endpoint, token) {
+  const authorization = token ? { Authorization: `Bearer ${token}` } : '';
+  const res = await fetch(URL + endpoint, {
+    headers: { ...authorization },
+  });
+  const resInJson = await res.json();
+  return resInJson;
+}

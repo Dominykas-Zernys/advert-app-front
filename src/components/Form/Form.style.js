@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import { pageColors } from '../../helpers/pageColors';
 
 export const Form = styled.form`
   display: grid;
@@ -37,5 +38,14 @@ export const Form = styled.form`
       justify-self: center;
       grid-column: 1 / span 2;
     }
+  }
+
+  & .loading-text {
+    padding: 1rem;
+    color: ${pageColors.hover};
+    font-weight: 900;
+    display: flex;
+    align-items: center;
+    justify-content: center;
   }
 `;

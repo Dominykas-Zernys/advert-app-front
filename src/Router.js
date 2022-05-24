@@ -1,10 +1,10 @@
-import React, { useEffect, useState } from 'react';
+import React from 'react';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import Navigation from './components/Navigation/Navigation';
 import ProtectedRoute from './helpers/ProtectedRoute';
 import RedirectRoute from './helpers/redirectRoute';
 import About from './pages/About';
-import Advert from './pages/Advert';
+import AdvertPage from './pages/AdvertPage';
 import ErrorPage from './pages/ErrorPage';
 import Home from './pages/Home';
 import Login from './pages/Login';
@@ -29,7 +29,7 @@ const Router = () => {
         </Route>
         <Route path='/about' element={<About />} />
         <Route path='/advert' element={<ProtectedRoute />}>
-          <Route path='/advert' element={<Advert />} />
+          <Route path='/advert' element={<AdvertPage />} />
         </Route>
         <Route path='/create-advert' element={<ProtectedRoute />}>
           <Route path='/create-advert' element={<NewAdvert />} />

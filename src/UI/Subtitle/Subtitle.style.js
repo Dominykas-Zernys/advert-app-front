@@ -7,4 +7,5 @@ export const H2 = styled.h2`
   opacity: 0.85;
   margin-block-start: 1em;
   margin-block-end: 1em;
+  ${(props) => props.noMargin && 'margin:0'}
 `;

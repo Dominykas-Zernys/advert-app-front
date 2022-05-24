@@ -5,4 +5,5 @@ export const Grid = styled.div`
   grid-template-columns: repeat(3, 1fr);
   justify-items: center;
   align-items: center;
+  column-gap: 2rem;
 `;

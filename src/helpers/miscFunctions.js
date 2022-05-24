@@ -18,3 +18,8 @@ export function formatInfoText(infoText) {
   const textNoQuotes = textToReturn.replaceAll('"', '');
   return textNoQuotes.charAt(0).toUpperCase() + textNoQuotes.slice(1) + '!';
 }
+
+// Function to capitalize text
+export function capitalize(text) {
+  return text.charAt(0).toUpperCase() + text.slice(1);
+}

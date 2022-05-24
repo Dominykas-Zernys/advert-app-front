@@ -11,8 +11,8 @@ const Dropdown = ({ placeholder, labelText, inputValue, setInputValue, options }
           {placeholder}
         </option>
         {options.map((opt) => (
-          <option key={opt.value} value={opt.value}>
-            {opt.text}
+          <option key={opt.id} value={opt.id}>
+            {opt.name}
           </option>
         ))}
       </S.Dropdown>
@@ -27,8 +27,8 @@ Dropdown.propTypes = {
   setInputValue: PropTypes.func.isRequired,
   options: PropTypes.arrayOf(
     PropTypes.shape({
-      value: PropTypes.number.isRequired,
-      text: PropTypes.string.isRequired,
+      id: PropTypes.number.isRequired,
+      name: PropTypes.string.isRequired,
     }).isRequired
   ).isRequired,
 };

@@ -6,7 +6,7 @@ import Form from '../components/Form/Form';
 import Input from '../components/Input/Input';
 import Main from '../components/Main/Main';
 import { AuthContext } from '../helpers/AuthContext';
-import { fetchPost } from '../helpers/fetchFunctions';
+import { fetchGet, fetchPost } from '../helpers/fetchFunctions';
 import { areThereEmptyFields, formatInfoText, restartStates } from '../helpers/miscFunctions';
 import { pageColors } from '../helpers/pageColors';
 import InfoText from '../UI/InfoText/InfoText';
@@ -30,6 +30,21 @@ const NewAdvert = () => {
   const [submitFail, setSubmitFail] = useState(false);
   const [failText, setFailText] = useState('');
 
+  // States to hold categories
+  const [loading, setLoading] = useState(true);
+  const [categories, setCategories] = useState([]);
+
+  // Functions to load all categories
+  async function getCategories() {
+    const cats = await fetchGet('categories');
+    setCategories(cats.msg);
+    setLoading(false);
+  }
+
+  useEffect(() => {
+    getCategories();
+  }, []);
+
   // Function to restart info text
   function restartInfoText() {
     restartStates([setSubmitSuccess, setSubmitFail], false);
@@ -40,7 +55,6 @@ const NewAdvert = () => {
   async function formSubmit(e) {
     e.preventDefault();
     restartInfoText();
-    console.log([title, shortDescription, category, image, description, email, phone, style]);
     if (areThereEmptyFields([title, shortDescription, category, image, description, email, phone, style])) {
       setSubmitFail(true);
       setFailText('Fields cannot be empty!');
@@ -75,16 +89,17 @@ const NewAdvert = () => {
         <Title>New Advert</Title>
         <Form type={'advert'} submitHandler={formSubmit} changeHandler={restartInfoText}>
           <Input placeholder='Title' inputValue={title} setInputValue={setTitle} type='text' labelText='Create a title for your advert' />
-          <Dropdown
-            placeholder='Select category...'
-            inputValue={category}
-            setInputValue={setCategory}
-            labelText='Select advert category:'
-            options={[
-              { value: 1, text: 'option vienas' },
-              { value: 2, text: 'option du' },
-            ]}
-          />
+          {loading ? (
+            <div className='loading-text'>Loading categories...</div>
+          ) : (
+            <Dropdown
+              placeholder='Select category...'
+              inputValue={category}
+              setInputValue={setCategory}
+              labelText='Select advert category:'
+              options={categories}
+            />
+          )}
           <Input
             placeholder='Short description'
             inputValue={shortDescription}
@@ -110,8 +125,8 @@ const NewAdvert = () => {
             setInputValue={setStyle}
             labelText='Select a style for your advert:'
             options={[
-              { value: 1, text: 'option vienas' },
-              { value: 2, text: 'option du' },
+              { id: 1, name: 'option vienas' },
+              { id: 2, name: 'option du' },
             ]}
           />
           <Text center={true} textIndent={false} fontSize='1rem'>
