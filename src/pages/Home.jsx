@@ -41,7 +41,7 @@ const Home = () => {
   useEffect(() => {
     setFilteredAdArray(
       adArray.filter((ad) => {
-        if (ad.title.includes(searchValue)) {
+        if (ad.title.toLowerCase().includes(searchValue.toLowerCase())) {
           return ad;
         }
       })

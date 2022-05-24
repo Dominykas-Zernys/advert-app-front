@@ -12,7 +12,6 @@ const Filter = ({ handleCategoryChange }) => {
 
   async function getCategories() {
     const cats = await fetchGet('categories');
-    console.log(cats.msg);
     setCategories(cats.msg);
     setLoading(false);
   }

@@ -5,7 +5,7 @@ import * as S from './Advert.style';
 const Advert = ({ adInfo }) => {
   return (
     <S.Ad>
-      <S.WrapperLink to='/'>
+      <S.WrapperLink to={'/advert/' + adInfo.id}>
         <div>{adInfo.title}</div>
       </S.WrapperLink>
     </S.Ad>

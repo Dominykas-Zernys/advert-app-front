@@ -13,7 +13,7 @@ const Navigation = () => {
       <Wrapper>
         <S.Nav>
           <S.ImgWrapper>
-            <img src='img/logo.jpeg' alt='Advertise Yourself logo' />
+            <img src={'img/logo.jpeg'} alt='Advertise Yourself logo' />
           </S.ImgWrapper>
           <NavLink activeclassname='active' to='/'>
             Home
