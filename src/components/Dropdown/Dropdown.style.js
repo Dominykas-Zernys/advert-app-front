@@ -15,6 +15,7 @@ export const Dropdown = styled.select`
   padding: 0.5rem 0.75rem;
   border-radius: 1rem;
   border: 1px solid ${pageColors.primary};
+  font-family: inherit;
 
   &:focus {
     outline: none;

@@ -1,6 +1,7 @@
-import React, { useState } from 'react';
+import React from 'react';
 import PropTypes from 'prop-types';
 import * as S from './Dropdown.style';
+import { capitalize } from '../../helpers/miscFunctions';
 
 const Dropdown = ({ placeholder, labelText, inputValue, setInputValue, options }) => {
   return (
@@ -12,7 +13,7 @@ const Dropdown = ({ placeholder, labelText, inputValue, setInputValue, options }
         </option>
         {options.map((opt) => (
           <option key={opt.id} value={opt.id}>
-            {opt.name}
+            {capitalize(opt.name)}
           </option>
         ))}
       </S.Dropdown>

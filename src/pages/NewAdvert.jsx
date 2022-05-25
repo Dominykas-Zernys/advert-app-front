@@ -6,13 +6,14 @@ import Form from '../components/Form/Form';
 import Input from '../components/Input/Input';
 import Main from '../components/Main/Main';
 import { AuthContext } from '../helpers/AuthContext';
-import { fetchGet, fetchPost } from '../helpers/fetchFunctions';
+import { fetchGet, fetchPostAd } from '../helpers/fetchFunctions';
 import { areThereEmptyFields, formatInfoText, restartStates } from '../helpers/miscFunctions';
 import { pageColors } from '../helpers/pageColors';
 import InfoText from '../UI/InfoText/InfoText';
 import PageButton from '../UI/PageButton/PageButton';
 import Text from '../UI/Text/Text';
 import Title from '../UI/Title/Title';
+import ImageInput from '../components/ImageInput/ImageInput';
 
 const NewAdvert = () => {
   // Input values
@@ -55,25 +56,22 @@ const NewAdvert = () => {
   async function formSubmit(e) {
     e.preventDefault();
     restartInfoText();
-    if (areThereEmptyFields([title, shortDescription, category, image, description, email, phone, style])) {
+    if (areThereEmptyFields([title, shortDescription, category, description, email, phone, style]) || !image) {
       setSubmitFail(true);
       setFailText('Fields cannot be empty!');
       return;
     }
-    const postRes = await fetchPost(
-      'adverts',
-      {
-        title,
-        shortDescription,
-        category,
-        image,
-        description,
-        email,
-        phone,
-        style,
-      },
-      localStorage.getItem('token')
-    );
+
+    const formData = new FormData();
+    formData.append('title', title);
+    formData.append('shortDescription', shortDescription);
+    formData.append('category', category);
+    formData.append('image', image);
+    formData.append('description', description);
+    formData.append('email', email);
+    formData.append('phone', phone);
+    formData.append('style', style);
+    const postRes = await fetchPostAd('adverts', formData, localStorage.getItem('token'));
     if (!postRes.success) {
       setSubmitFail(true);
       setFailText(formatInfoText(postRes.err));
@@ -81,6 +79,7 @@ const NewAdvert = () => {
     }
     setSubmitSuccess(true);
     restartStates([setTitle, setShortDescription, setCategory, setImage, setDescription, setEmail, setPhone, setStyle]);
+    e.target.image.value = '';
   }
 
   return (
@@ -118,7 +117,7 @@ const NewAdvert = () => {
           />
           <Input placeholder='Email' inputValue={email} setInputValue={setEmail} type='email' labelText='Your contact email. It will be shown on the advert:' />
           <Input placeholder='Tel' inputValue={phone} setInputValue={setPhone} type='text' labelText='Your contact phone. It will be shown on the advert:' />
-          <Input inputValue={image} setInputValue={setImage} type='text' labelText='Upload an image for your advert:' />
+          <ImageInput setState={setImage} />
           <Dropdown
             placeholder='Select style...'
             inputValue={style}

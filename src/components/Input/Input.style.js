@@ -20,6 +20,7 @@ export const Input = styled.input`
   padding: 0.5rem 0.75rem;
   border-radius: 1rem;
   border: 1px solid ${pageColors.primary};
+  font-family: inherit;
 
   &:focus {
     outline: none;
@@ -32,6 +33,7 @@ export const TextArea = styled.textarea`
   border: 1px solid ${pageColors.primary};
   resize: vertical;
   min-height: ${(props) => props.height};
+  font-family: inherit;
 
   &:focus {
     outline: none;

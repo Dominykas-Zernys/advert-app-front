@@ -1,5 +1,4 @@
 import { useEffect, useState } from 'react';
-import { useNavigate } from 'react-router-dom';
 import './App.css';
 import { AuthContext } from './helpers/AuthContext';
 import Router from './Router';

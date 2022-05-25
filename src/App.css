@@ -1,12 +1,9 @@
-*{
-    font-family: 'Open Sans', sans-serif;
-}
-
 html {
     overflow-y: scroll;
 }
 
 body{
+    font-family: 'Open Sans', sans-serif;
     margin: 0;
 }
 

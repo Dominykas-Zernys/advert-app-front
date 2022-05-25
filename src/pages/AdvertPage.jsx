@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
+import FullAdvert from '../advertComponents/FullAdvert/FullAdvert';
 import Loading from '../components/Loading/Loading';
 import Main from '../components/Main/Main';
 import { fetchGet } from '../helpers/fetchFunctions';
@@ -26,7 +27,7 @@ const AdvertPage = () => {
   return (
     <Main>
       {loading && <Loading />}
-      {!loading && <div>{advertInfo.title}</div>}
+      {!loading && <FullAdvert adInfo={advertInfo} />}
     </Main>
   );
 };
