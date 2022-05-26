@@ -9,11 +9,12 @@ function App() {
   const [username, setUsername] = useState('');
   const [checkingForToken, setCheckingForToken] = useState(true);
 
-  function login(token, username) {
+  function login(token, username, email) {
     setIsLoggedIn(true);
     setUsername(username);
     localStorage.setItem('username', username);
     localStorage.setItem('token', token);
+    localStorage.setItem('email', email);
   }
 
   function logout() {
@@ -21,6 +22,7 @@ function App() {
     setUsername('');
     localStorage.removeItem('username');
     localStorage.removeItem('token');
+    localStorage.removeItem('email');
   }
 
   // Check if user is logged in after page refresh
@@ -28,8 +30,9 @@ function App() {
   async function checkForToken() {
     const token = localStorage.getItem('token');
     const username = localStorage.getItem('username');
-    if (token && username) {
-      login(token, username);
+    const email = localStorage.getItem('email');
+    if (token && username && email) {
+      login(token, username, email);
       setCheckingForToken(false);
       return;
     }

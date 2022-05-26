@@ -3,7 +3,6 @@ import PropTypes from 'prop-types';
 import { fetchGet } from '../../helpers/fetchFunctions';
 import FilterButton from '../../UI/FilterButton/FilterButton';
 import * as S from './Filter.style';
-import Text from '../../UI/Text/Text';
 
 const Filter = ({ handleCategoryChange }) => {
   // Get all categories from database
@@ -36,6 +35,8 @@ const Filter = ({ handleCategoryChange }) => {
   );
 };
 
-Filter.propTypes = {};
+Filter.propTypes = {
+  handleCategoryChange: PropTypes.func,
+};
 
 export default Filter;

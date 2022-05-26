@@ -51,7 +51,7 @@ const Login = () => {
       return;
     }
     restartStates([setEmail, setPassword]);
-    login(postRes.msg.token, postRes.msg.username);
+    login(postRes.msg.token, postRes.msg.username, postRes.msg.email);
     navigate('../', { replace: true });
   }
 

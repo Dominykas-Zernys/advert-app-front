@@ -22,7 +22,7 @@ const NewAdvert = () => {
   const [category, setCategory] = useState('');
   const [image, setImage] = useState('');
   const [description, setDescription] = useState('');
-  const [email, setEmail] = useState('');
+  const [email, setEmail] = useState(localStorage.getItem('email'));
   const [phone, setPhone] = useState('');
   const [style, setStyle] = useState('');
 
