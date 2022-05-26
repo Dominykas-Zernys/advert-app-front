@@ -26,7 +26,13 @@ export const Ad = styled.div`
     & .contacts {
       opacity: 1;
       transition-delay: 0.15s;
-      transition: opacity 0.65s ease-in-out;
+      transition: opacity 0.65s;
+      z-index: 10000;
+    }
+
+    & .title-header {
+      opacity: 0;
+      transition: opacity 0.65s;
     }
   }
 `;
@@ -41,43 +47,69 @@ export const WrapperLink = styled(Link)`
   box-sizing: border-box;
 
   & .title {
-    background-color: ${(props) => props.adstyle.colors.secondary};
-    padding: 1rem;
+    padding: 0.25rem;
     margin-bottom: 1rem;
     font-size: 1.2rem;
+    position: relative;
+
+    & .title-header {
+      position: relative;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      bottom: 0.25rem;
+      right: 0.25rem;
+      padding: 0.25rem;
+      width: 100%;
+      height: 100%;
+      background-color: green;
+      font-size: inherit;
+      transition: opacity 0.65s;
+    }
   }
 
   & .content {
     flex-grow: 1;
     position: relative;
+    background-image: url(${(props) => props.imagesrc});
+    background-position: center;
+    background-size: cover;
   }
 
   & .short-description {
+    box-sizing: border-box;
     padding: 1rem;
-    opacity: 1;
-    background-image: url(${(props) => props.imagesrc});
+    opacity: 0;
     height: 100%;
     width: 100%;
-    box-sizing: border-box;
+    background-color: ${(props) => props.adstyle.colors.secondary};
+    transition-delay: 0.15s;
+    transition: opacity 0.65s ease-in-out;
   }
 
   & .contacts {
     position: absolute;
     top: 0;
+    right: 0;
     justify-content: space-around;
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
     width: 100%;
     height: 100%;
     opacity: 0;
     transition: all 0.5s ease-out;
+    gap: 0.5rem;
   }
 
   & .contact {
+    display: flex;
+    align-items: center;
+    justify-content: center;
     background-color: ${(props) => props.adstyle.colors.primary};
-    padding: 1rem;
-    font-size: 1.2rem;
+    padding: 0.25rem;
+    font-size: 0.9rem;
     border-radius: 1rem;
     z-index: 999;
+    flex-grow: 1;
   }
 `;

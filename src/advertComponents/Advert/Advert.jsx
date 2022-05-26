@@ -23,17 +23,19 @@ const Advert = ({ adInfo }) => {
     <S.Ad>
       {adStyle && (
         <S.WrapperLink imagesrc={adInfo.imageSrc} adstyle={adStyle} to={'/advert/' + adInfo.id}>
-          <h3 className='title'>{capitalize(adInfo.title)}</h3>
-          <div className='content'>
-            <p className='short-description'>{capitalize(adInfo.shortDescription)}</p>
+          <div className='title'>
+            <h3 className='title-header'>{capitalize(adInfo.title)}</h3>{' '}
             <div className='contacts'>
-              {/* <h3 data-id={adInfo.phone} onClick={handleClick} className='contact'>
+              <h3 data-id={adInfo.phone} onClick={handleClick} className='contact'>
                 {adInfo.phone}
               </h3>
               <h3 data-id={adInfo.email} onClick={handleClick} className='contact'>
                 {adInfo.email}
-              </h3> */}
+              </h3>
             </div>
+          </div>
+          <div className='content'>
+            <p className='short-description'>{capitalize(adInfo.shortDescription)}</p>
           </div>
         </S.WrapperLink>
       )}

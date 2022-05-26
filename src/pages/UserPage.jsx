@@ -66,7 +66,7 @@ const UserPage = () => {
   useEffect(() => {
     !Number(currentCategory)
       ? setArrayToDisplay(filteredAdArray)
-      : setArrayToDisplay(filteredAdArray.filter((ad) => ad.category_id === Number(currentCategory)));
+      : setArrayToDisplay(filteredAdArray.filter((ad) => ad.categoryId === Number(currentCategory)));
   }, [currentCategory, filteredAdArray]);
 
   return (
