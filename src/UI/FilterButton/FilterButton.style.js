@@ -3,6 +3,7 @@ import { pageColors } from '../../helpers/pageColors';
 
 export const FilterBtn = styled.li`
   list-style: none;
+
   & input:checked ~ label {
     box-shadow: 0 0 3px #343875;
     transition: box-shadow 0.5s;

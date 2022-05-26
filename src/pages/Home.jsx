@@ -25,10 +25,6 @@ const Home = () => {
   const [searchValue, setSearchValue] = useState('');
   const [currentCategory, setCurrentCategory] = useState(0);
 
-  // Pagination States
-  const [onePageAds, setOnePageAds] = useState([]);
-  const [currentPage, setCurrentPage] = useState(1);
-
   // Fetching all adverts to display
   async function getAllAdverts() {
     const ads = await fetchGet('adverts');
@@ -61,7 +57,6 @@ const Home = () => {
     !Number(currentCategory)
       ? setArrayToDisplay(filteredAdArray)
       : setArrayToDisplay(filteredAdArray.filter((ad) => ad.categoryId === Number(currentCategory)));
-    setOnePageAds(arrayToDisplay.slice(currentPage - 1, 12 * currentPage));
   }, [currentCategory, filteredAdArray]);
 
   return (
@@ -74,7 +69,7 @@ const Home = () => {
         <Filter handleCategoryChange={handleFilter} />
         <Input labelText='Search adverts' type='text' inputValue={searchValue} setInputValue={setSearchValue} placeholder='search' />
       </FilterWrapper>
-      {loading ? <Loading /> : <AdvertsGrid adverts={onePageAds} />}
+      {loading ? <Loading /> : <AdvertsGrid adverts={arrayToDisplay} searchValue={searchValue} currentCategory={currentCategory} />}
       {!loading && !arrayToDisplay.length && (
         <Text textIndent={false} center={true}>
           No adverts found

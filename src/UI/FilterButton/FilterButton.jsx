@@ -1,7 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import * as S from './FilterButton.style';
-import Input from '../../components/Input/Input';
 import { capitalize } from '../../helpers/miscFunctions';
 
 const FilterButton = ({ labelText, id, checkedBtn = false }) => {
