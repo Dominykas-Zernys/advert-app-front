@@ -18,7 +18,7 @@ export const Ad = styled.div`
     transition-delay: 0.15s;
 
     & .short-description {
-      opacity: 0;
+      opacity: 1;
       transition-delay: 0.15s;
       transition: opacity 0.65s ease-in-out;
     }
@@ -55,7 +55,7 @@ export const WrapperLink = styled(Link)`
   & .short-description {
     padding: 1rem;
     opacity: 1;
-    background-color: ${(props) => props.adstyle.colors.secondary};
+    background-image: url(${(props) => props.imagesrc});
     height: 100%;
     width: 100%;
     box-sizing: border-box;
@@ -78,5 +78,6 @@ export const WrapperLink = styled(Link)`
     padding: 1rem;
     font-size: 1.2rem;
     border-radius: 1rem;
+    z-index: 999;
   }
 `;

@@ -13,6 +13,12 @@ const Advert = ({ adInfo }) => {
     setAdStyle(advertStyles.find((style) => style.id === styleId));
   }, [adInfo]);
 
+  // Function to copy contact information on click
+  function handleClick(e) {
+    navigator.clipboard.writeText(e.target.dataset.id);
+    e.preventDefault();
+  }
+
   return (
     <S.Ad>
       {adStyle && (
@@ -21,8 +27,12 @@ const Advert = ({ adInfo }) => {
           <div className='content'>
             <p className='short-description'>{capitalize(adInfo.shortDescription)}</p>
             <div className='contacts'>
-              <h3 className='contact'>{adInfo.phone}</h3>
-              <h3 className='contact'>{adInfo.email}</h3>
+              {/* <h3 data-id={adInfo.phone} onClick={handleClick} className='contact'>
+                {adInfo.phone}
+              </h3>
+              <h3 data-id={adInfo.email} onClick={handleClick} className='contact'>
+                {adInfo.email}
+              </h3> */}
             </div>
           </div>
         </S.WrapperLink>
