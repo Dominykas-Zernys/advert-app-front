@@ -5,6 +5,7 @@ export const InputWrapper = styled.div`
   padding: 1rem 1rem;
   display: flex;
   flex-direction: column;
+  position: relative;
 `;
 
 export const Label = styled.label`
@@ -37,5 +38,17 @@ export const TextArea = styled.textarea`
 
   &:focus {
     outline: none;
+  }
+`;
+
+export const TextAreaCount = styled.div`
+  position: absolute;
+  bottom: 1.5rem;
+  right: 2rem;
+  font-size: 0.9rem;
+  color: ${pageColors.text};
+
+  & span {
+    color: ${(props) => (props.inputLength < 10 || props.inputLength > props.maxLength ? pageColors.danger : 'inherit')};
   }
 `;

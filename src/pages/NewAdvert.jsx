@@ -21,6 +21,7 @@ const NewAdvert = () => {
   const [shortDescription, setShortDescription] = useState('');
   const [category, setCategory] = useState('');
   const [image, setImage] = useState('');
+  const [bannerImg, setBannerImg] = useState('');
   const [description, setDescription] = useState('');
   const [email, setEmail] = useState(localStorage.getItem('email'));
   const [phone, setPhone] = useState('');
@@ -56,17 +57,17 @@ const NewAdvert = () => {
   async function formSubmit(e) {
     e.preventDefault();
     restartInfoText();
-    if (areThereEmptyFields([title, shortDescription, category, description, email, phone, style]) || !image) {
+    if (areThereEmptyFields([title, shortDescription, category, description, email, phone, bannerImg, style]) || !image) {
       setSubmitFail(true);
       setFailText('Fields cannot be empty!');
       return;
     }
-
     const formData = new FormData();
     formData.append('title', title);
     formData.append('shortDescription', shortDescription);
     formData.append('category', category);
     formData.append('image', image);
+    formData.append('bannerImg', bannerImg);
     formData.append('description', description);
     formData.append('email', email);
     formData.append('phone', phone);
@@ -78,7 +79,7 @@ const NewAdvert = () => {
       return;
     }
     setSubmitSuccess(true);
-    restartStates([setTitle, setShortDescription, setCategory, setImage, setDescription, setEmail, setPhone, setStyle]);
+    restartStates([setTitle, setShortDescription, setCategory, setImage, setDescription, setBannerImg, setEmail, setPhone, setStyle]);
     e.target.image.value = '';
   }
 
@@ -106,6 +107,7 @@ const NewAdvert = () => {
             type='textarea'
             height='4rem'
             labelText='Write a short description for your advert. It will show up on the front page:'
+            maxLength={50}
           />
           <Input
             placeholder='Full description'
@@ -114,10 +116,18 @@ const NewAdvert = () => {
             setInputValue={setDescription}
             type='textarea'
             labelText='Write a full description that will show up on advert page:'
+            maxLength={200}
           />
           <Input placeholder='Email' inputValue={email} setInputValue={setEmail} type='email' labelText='Your contact email. It will be shown on the advert:' />
           <Input placeholder='Tel' inputValue={phone} setInputValue={setPhone} type='text' labelText='Your contact phone. It will be shown on the advert:' />
           <ImageInput setState={setImage} />
+          <Input
+            placeholder='Image url'
+            inputValue={bannerImg}
+            setInputValue={setBannerImg}
+            type='text'
+            labelText='Provide a link to a secondary image for your banner:'
+          />
           <Dropdown
             placeholder='Select style...'
             inputValue={style}

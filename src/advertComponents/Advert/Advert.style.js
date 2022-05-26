@@ -1,6 +1,5 @@
 import { Link } from 'react-router-dom';
 import styled from 'styled-components';
-import { pageColors } from '../../helpers/pageColors';
 
 export const Ad = styled.div`
   width: 100%;
@@ -18,7 +17,7 @@ export const Ad = styled.div`
     transition-delay: 0.15s;
 
     & .short-description {
-      opacity: 1;
+      opacity: 0.75;
       transition-delay: 0.15s;
       transition: opacity 0.65s ease-in-out;
     }
@@ -97,7 +96,8 @@ export const WrapperLink = styled(Link)`
     width: 100%;
     height: 100%;
     opacity: 0;
-    transition: all 0.5s ease-out;
+    transition-delay: 0.15s;
+    transition: opacity 0.65s ease-in-out;
     gap: 0.5rem;
   }
 

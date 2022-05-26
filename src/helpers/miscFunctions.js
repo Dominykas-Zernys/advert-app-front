@@ -15,6 +15,9 @@ export function formatInfoText(infoText) {
   if (infoText.split(' ')[0] === '"shortDescription"') {
     textToReturn = infoText.replaceAll('shortDescription', 'Short description');
   }
+  if (infoText.split(' ')[0] === '"bannerImg"') {
+    textToReturn = infoText.replaceAll('bannerImg', 'Banner image');
+  }
   const textNoQuotes = textToReturn.replaceAll('"', '');
   return textNoQuotes.charAt(0).toUpperCase() + textNoQuotes.slice(1) + '!';
 }

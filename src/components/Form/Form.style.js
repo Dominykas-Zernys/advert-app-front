@@ -30,10 +30,6 @@ export const Form = styled.form`
       grid-column: 1 / span 2;
     }
 
-    & p {
-      grid-column: 1 / span 2;
-    }
-
     & button {
       justify-self: center;
       grid-column: 1 / span 2;
