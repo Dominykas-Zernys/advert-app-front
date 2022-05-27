@@ -41,5 +41,6 @@ export const NumbersWrapper = styled.form`
     border-right: 2px solid ${pageColors.primary};
     border-bottom: 2px solid ${pageColors.primary};
     margin-right: -2px;
+    font-weight: 900;
   }
 `;

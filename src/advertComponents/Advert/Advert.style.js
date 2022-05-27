@@ -38,7 +38,7 @@ export const Ad = styled.div`
 
 export const WrapperLink = styled(Link)`
   width: 100%;
-  background-color: ${(props) => props.adstyle.colors.background};
+  background-color: ${(props) => props.adstyle.colors.secondaryBcg};
   height: 100%;
   display: flex;
   flex-direction: column;
@@ -81,7 +81,7 @@ export const WrapperLink = styled(Link)`
     opacity: 0;
     height: 100%;
     width: 100%;
-    background-color: ${(props) => props.adstyle.colors.secondary};
+    background-color: ${(props) => props.adstyle.colors.secondaryBcg};
     transition-delay: 0.15s;
     transition: opacity 0.65s ease-in-out;
   }

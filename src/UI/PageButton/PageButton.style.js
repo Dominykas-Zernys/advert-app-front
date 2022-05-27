@@ -14,12 +14,12 @@ export const PageBtn = styled.button`
 
   &:hover {
     transition: all 0.3s;
-    background-color: ${pageColors.hover};
+    background-color: ${pageColors.buttonHover};
   }
 
   &:active {
     transition: all 0.3s;
-    background-color: ${pageColors.hover};
+    background-color: ${pageColors.buttonHover};
     opacity: 0.8;
   }
 `;
