@@ -6,6 +6,13 @@ export const InputWrapper = styled.div`
   display: flex;
   flex-direction: column;
   position: relative;
+
+  & .plus {
+    position: absolute;
+    width: min-content;
+    bottom: 1.425rem;
+    left: 1.75rem;
+  }
 `;
 
 export const Label = styled.label`
@@ -22,6 +29,10 @@ export const Input = styled.input`
   border-radius: 1rem;
   border: 1px solid ${pageColors.primary};
   font-family: inherit;
+
+  &.phone {
+    padding-left: 1.5rem;
+  }
 
   &:focus {
     outline: none;

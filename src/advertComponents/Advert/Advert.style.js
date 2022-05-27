@@ -1,5 +1,6 @@
 import { Link } from 'react-router-dom';
 import styled from 'styled-components';
+import { pageColors } from '../../helpers/pageColors';
 
 export const Ad = styled.div`
   width: 100%;
@@ -8,6 +9,8 @@ export const Ad = styled.div`
   margin: 1rem;
   height: 16em;
   transition: all 0.5s ease-out;
+  color: ${(props) => props.adstyle.banner.textColor};
+  font-family: ${(props) => props.adstyle.font};
 
   &:hover {
     font-size: 18px;
@@ -17,15 +20,15 @@ export const Ad = styled.div`
     transition-delay: 0.15s;
 
     & .short-description {
-      opacity: 0.75;
+      opacity: 0.95;
       transition-delay: 0.15s;
-      transition: opacity 0.65s ease-in-out;
+      transition: opacity 0.5s ease-out;
     }
 
     & .contacts {
       opacity: 1;
       transition-delay: 0.15s;
-      transition: opacity 0.65s;
+      transition: opacity 0.5s;
       z-index: 10000;
     }
 
@@ -38,18 +41,21 @@ export const Ad = styled.div`
 
 export const WrapperLink = styled(Link)`
   width: 100%;
-  background-color: ${(props) => props.adstyle.colors.secondaryBcg};
+  background-color: ${(props) => props.adstyle.banner.primary};
   height: 100%;
   display: flex;
   flex-direction: column;
   padding: 2rem;
   box-sizing: border-box;
+  letter-spacing: ${(props) => (props.adstyle.letterSpacing.length ? props.adstyle.letterSpacing.length : '0.05rem')};
+  font-family: ${(props) => props.adstyle.font};
 
   & .title {
     padding: 0.25rem;
     margin-bottom: 1rem;
     font-size: 1.2rem;
     position: relative;
+    letter-spacing: ${(props) => (props.adstyle.letterSpacing.length ? props.adstyle.letterSpacing : '0.15rem')};
 
     & .title-header {
       position: relative;
@@ -61,7 +67,9 @@ export const WrapperLink = styled(Link)`
       padding: 0.25rem;
       width: 100%;
       height: 100%;
-      background-color: green;
+      background-color: ${(props) => props.adstyle.banner.secondary};
+      border: ${(props) => props.adstyle.banner.border};
+      border-radius: ${(props) => props.adstyle.containers.borderRadius};
       font-size: inherit;
       transition: opacity 0.65s;
     }
@@ -81,9 +89,11 @@ export const WrapperLink = styled(Link)`
     opacity: 0;
     height: 100%;
     width: 100%;
-    background-color: ${(props) => props.adstyle.colors.secondaryBcg};
+    background-color: ${(props) => props.adstyle.banner.secondary};
+    border: ${(props) => props.adstyle.banner.border};
     transition-delay: 0.15s;
     transition: opacity 0.65s ease-in-out;
+    word-break: break-word;
   }
 
   & .contacts {
@@ -99,17 +109,30 @@ export const WrapperLink = styled(Link)`
     transition-delay: 0.15s;
     transition: opacity 0.65s ease-in-out;
     gap: 0.5rem;
+    letter-spacing: 0rem;
   }
 
   & .contact {
     display: flex;
     align-items: center;
     justify-content: center;
-    background-color: ${(props) => props.adstyle.colors.primary};
+    background-color: ${(props) => props.adstyle.banner.secondary};
+    border: ${(props) => props.adstyle.banner.border};
     padding: 0.25rem;
     font-size: 0.9rem;
-    border-radius: 1rem;
-    z-index: 999;
+    border-radius: ${(props) => props.adstyle.containers.borderRadius};
     flex-grow: 1;
+    position: relative;
+
+    & .copied-text {
+      z-index: 999;
+      position: absolute;
+      top: -1.5rem;
+      padding: 0.25rem;
+      border-radius: 3rem;
+      border-bottom: 2px solid ${pageColors.primary};
+      border-left: 2px solid ${pageColors.primary};
+      font-size: 1rem;
+    }
   }
 `;

@@ -82,7 +82,7 @@ const UserPage = () => {
         <Filter handleCategoryChange={handleFilter} />
         <Input labelText='Search my adverts' type='text' inputValue={searchValue} setInputValue={setSearchValue} placeholder='search' />
       </FilterWrapper>
-      {loading ? <Loading /> : <AdvertsGrid adverts={arrayToDisplay} />}
+      {loading ? <Loading /> : <AdvertsGrid adverts={arrayToDisplay} searchValue={searchValue} currentCategory={currentCategory} />}
       {!loading && !adArray.length && (
         <Text textIndent={false} center={true}>
           No adverts found

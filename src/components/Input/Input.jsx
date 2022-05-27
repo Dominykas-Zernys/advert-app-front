@@ -9,13 +9,20 @@ const Input = ({ labelText, type, inputValue, setInputValue, height, placeholder
       {type === 'textarea' ? (
         <S.TextArea placeholder={placeholder} value={inputValue} height={height} onChange={(e) => setInputValue(e.target.value)}></S.TextArea>
       ) : (
-        <S.Input placeholder={placeholder} value={inputValue} type={type} onChange={(e) => setInputValue(e.target.value)} />
+        <S.Input
+          className={placeholder === 'Tel' ? 'phone' : ''}
+          placeholder={placeholder}
+          value={inputValue}
+          type={type}
+          onChange={(e) => setInputValue(e.target.value)}
+        />
       )}
       {type === 'textarea' && (
         <S.TextAreaCount inputLength={inputValue.length} maxLength={maxLength}>
           Symbols total: <span>{inputValue.length}</span>/{maxLength}
         </S.TextAreaCount>
       )}
+      {placeholder === 'Tel' ? <span className='plus'>+</span> : ''}
     </S.InputWrapper>
   );
 };

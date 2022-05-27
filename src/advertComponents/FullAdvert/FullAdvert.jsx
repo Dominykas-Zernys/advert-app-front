@@ -6,12 +6,43 @@ import { capitalize } from '../../helpers/miscFunctions';
 
 const FullAdvert = ({ adInfo }) => {
   const [adStyle, setAdStyle] = useState('');
+  const [phoneCopied, setPhoneCopied] = useState(false);
+  const [emailCopied, setEmailCopied] = useState(false);
 
   // Find style by style id from database
   useEffect(() => {
     const styleId = adInfo.styleId;
     setAdStyle(advertStyles.find((style) => style.id === styleId));
   }, [adInfo]);
+
+  // Function to copy contact when clicked
+  function copyPhone(e) {
+    navigator.clipboard.writeText(e.target.dataset.id);
+    setPhoneCopied(true);
+  }
+
+  function copyEmail(e) {
+    navigator.clipboard.writeText(e.target.dataset.id);
+    setEmailCopied(true);
+  }
+
+  // Hooks to display 'copied' text when contact is copied
+
+  useEffect(() => {
+    const timeout = setTimeout(() => {
+      if (phoneCopied) setPhoneCopied(false);
+    }, 1000);
+
+    return () => clearTimeout(timeout);
+  }, [phoneCopied]);
+
+  useEffect(() => {
+    const timeout = setTimeout(() => {
+      if (emailCopied) setEmailCopied(false);
+    }, 1000);
+
+    return () => clearTimeout(timeout);
+  }, [emailCopied]);
 
   return (
     adStyle && (
@@ -22,16 +53,16 @@ const FullAdvert = ({ adInfo }) => {
           </S.Title>
         </S.TitleWrapper>
         <S.ContactsWrapper>
-          <S.Contact className='container' adStyle={adStyle}>
-            Tel.: {adInfo.phone}
+          <S.Contact onClick={copyPhone} data-id={adInfo.phone} className='container' adStyle={adStyle}>
+            {phoneCopied ? 'phone copied!' : `Tel.: +${adInfo.phone}`}
           </S.Contact>
-          <S.Contact className='container' adStyle={adStyle}>
-            Email: {adInfo.email}
+          <S.Contact onClick={copyEmail} data-id={adInfo.email} className='container' adStyle={adStyle}>
+            {emailCopied ? 'email copied!' : `Email: ${adInfo.email}`}
           </S.Contact>
         </S.ContactsWrapper>
         <S.ContentWrapper>
           <S.Description className='container' adStyle={adStyle}>
-            {adInfo.description}
+            {capitalize(adInfo.description)}
           </S.Description>
           <S.Img className='container' adStyle={adStyle} imageSrc={adInfo.imageSrc} />
         </S.ContentWrapper>

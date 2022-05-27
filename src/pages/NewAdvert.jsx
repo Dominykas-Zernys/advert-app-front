@@ -14,6 +14,7 @@ import PageButton from '../UI/PageButton/PageButton';
 import Text from '../UI/Text/Text';
 import Title from '../UI/Title/Title';
 import ImageInput from '../components/ImageInput/ImageInput';
+import { advertStyles } from '../advertComponents/advertStyles';
 
 const NewAdvert = () => {
   // Input values
@@ -107,7 +108,7 @@ const NewAdvert = () => {
             type='textarea'
             height='4rem'
             labelText='Write a short description for your advert. It will show up on the front page:'
-            maxLength={50}
+            maxLength={100}
           />
           <Input
             placeholder='Full description'
@@ -116,7 +117,7 @@ const NewAdvert = () => {
             setInputValue={setDescription}
             type='textarea'
             labelText='Write a full description that will show up on advert page:'
-            maxLength={200}
+            maxLength={400}
           />
           <Input placeholder='Email' inputValue={email} setInputValue={setEmail} type='email' labelText='Your contact email. It will be shown on the advert:' />
           <Input placeholder='Tel' inputValue={phone} setInputValue={setPhone} type='text' labelText='Your contact phone. It will be shown on the advert:' />
@@ -133,10 +134,7 @@ const NewAdvert = () => {
             inputValue={style}
             setInputValue={setStyle}
             labelText='Select a style for your advert:'
-            options={[
-              { id: 1, name: 'option vienas' },
-              { id: 2, name: 'option du' },
-            ]}
+            options={advertStyles}
           />
           <Text center={true} textIndent={false} fontSize='1rem'>
             Don't know which style you want your advert to have? Check out all styles on our <Link to='/about'>About</Link> page
