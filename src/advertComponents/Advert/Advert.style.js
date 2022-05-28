@@ -7,7 +7,7 @@ export const Ad = styled.div`
   border-radius: 2rem;
   overflow: hidden;
   margin: 1rem;
-  height: 16em;
+  height: 20em;
   transition: all 0.5s ease-out;
   color: ${(props) => props.adstyle.banner.textColor};
   font-family: ${(props) => props.adstyle.font};
