@@ -1,7 +1,9 @@
 import React, { useContext } from 'react';
 import { Link } from 'react-router-dom';
+import { advertStyles } from '../advertComponents/advertStyles';
 import Container from '../components/Container/Container';
 import Main from '../components/Main/Main';
+import StylePreview from '../components/StylePreview/StylePreview';
 import { AuthContext } from '../helpers/AuthContext';
 import Subtitle from '../UI/Subtitle/Subtitle';
 import Text from '../UI/Text/Text';
@@ -10,6 +12,18 @@ import Title from '../UI/Title/Title';
 const About = () => {
   // Check if user is logged in to remove or add login and register links
   const { isLoggedIn } = useContext(AuthContext);
+
+  // Array to map out images for style preview
+  const previewArr = [
+    { name: 'pastel', banner: 'img/banner1.PNG', full: 'img/page1.PNG' },
+    { name: 'sssssssss', banner: 'img/banner2.PNG', full: 'img/page2.PNG' },
+    { name: 'retro', banner: 'img/banner3.PNG', full: 'img/page3.PNG' },
+    { name: 'elegant', banner: 'img/banner4.PNG', full: 'img/page4.PNG' },
+    { name: 'playful', banner: 'img/banner5.PNG', full: 'img/page5.PNG' },
+    { name: 'minimal', banner: 'img/banner6.PNG', full: 'img/page6.PNG' },
+    { name: 'social media', banner: 'img/banner7.PNG', full: 'img/page7.PNG' },
+    { name: 'letter', banner: 'img/banner8.PNG', full: 'img/page8.PNG' },
+  ];
 
   return (
     <Main>
@@ -47,8 +61,30 @@ const About = () => {
               </Link>
             </>
           )}{' '}
-          to the site, which takes no more than 5 minutes.
+          to the site, which takes no more than 5 minutes. Then, head to the{' '}
+          {isLoggedIn ? (
+            <Link to='/create-advert' target='_blank' rel='noopener noreferrer'>
+              Create advert
+            </Link>
+          ) : (
+            '"Create advert"'
+          )}{' '}
+          page. Fill in all the fields and submit your advert - you're done! Notice, that you have to upload the main image to display on your full advert and
+          provide a link to a secondary image that will show up on the main page on your advert banner. This is a measure to assure a fast load time for our
+          page. You will also have to choose a style for your advert. All styles are shown below.
         </Text>
+        <Subtitle>Advert styles</Subtitle>
+        <Text>
+          Currently, there are {advertStyles.length} advert styles on our website. Choose the one you want your advert to show up in. Here you can see what the
+          styles we have and how they look like. The advert banner is a smaller version of your advert that everyone will see on the{' '}
+          <Link to='/' target='_blank' rel='noopener noreferrer'>
+            Home
+          </Link>{' '}
+          page. The full version is shown when your advert banner is clicked on.
+        </Text>
+        {previewArr.map((ad) => (
+          <StylePreview key={ad.name} name={ad.name} bannerImg={ad.banner} pageImg={ad.full} />
+        ))}
       </Container>
     </Main>
   );

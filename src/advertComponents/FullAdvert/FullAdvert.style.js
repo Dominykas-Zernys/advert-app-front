@@ -9,7 +9,6 @@ export const AdWrapper = styled.div`
   border: ${(props) => props.adStyle.background.border};
   background: ${(props) => props.adStyle.background.background};
   box-shadow: ${(props) => props.adStyle.background.shadow};
-  letter-spacing: ${(props) => (props.adStyle.letterSpacing ? props.adStyle.letterSpacing : '0.1rem')};
 
   & .container {
     border-radius: ${(props) => props.adStyle.containers.borderRadius};
@@ -23,12 +22,11 @@ export const TitleWrapper = styled.div`
 `;
 
 export const Title = styled.h1`
-  letter-spacing: 0.15rem;
   background: ${(props) => props.adStyle.title.background};
   color: ${(props) => props.adStyle.title.color};
   box-shadow: ${(props) => props.adStyle.title.shadow};
   font-weight: 100;
-  padding: 0.5rem 4rem;
+  padding: 0.25rem 4rem;
   font-size: 2.5rem;
   display: inline-block;
   border: ${(props) => props.adStyle.title.border};
@@ -66,8 +64,7 @@ export const Contact = styled.h2`
 
   &:hover {
     font-size: 1.32rem;
-    padding: 0.9rem;
-    transition: font-size 0.5s, padding 0.5s;
+    transition: font-size 0.5s;
   }
 `;
 
@@ -102,6 +99,7 @@ export const Img = styled.div`
   border: ${(props) => props.adStyle.containers.primary.border};
   width: 40rem;
   background-image: url(${(props) => props.imageSrc});
+  background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
   border-top: ${(props) => props.adStyle.containers.primary.borderTop};

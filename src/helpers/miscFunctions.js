@@ -26,8 +26,3 @@ export function formatInfoText(infoText) {
 export function capitalize(text) {
   return text.charAt(0).toUpperCase() + text.slice(1);
 }
-
-// Function to append values to formData
-export function appendToFormData(formData, array) {
-  array.forEach((value) => formData.append(`${value}`, value));
-}

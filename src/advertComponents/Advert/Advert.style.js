@@ -47,7 +47,6 @@ export const WrapperLink = styled(Link)`
   flex-direction: column;
   padding: 2rem;
   box-sizing: border-box;
-  letter-spacing: ${(props) => (props.adstyle.letterSpacing.length ? props.adstyle.letterSpacing.length : '0.05rem')};
   font-family: ${(props) => props.adstyle.font};
 
   & .title {
@@ -55,7 +54,6 @@ export const WrapperLink = styled(Link)`
     margin-bottom: 1rem;
     font-size: 1.2rem;
     position: relative;
-    letter-spacing: ${(props) => (props.adstyle.letterSpacing.length ? props.adstyle.letterSpacing : '0.15rem')};
 
     & .title-header {
       position: relative;
@@ -130,8 +128,6 @@ export const WrapperLink = styled(Link)`
       top: -1.5rem;
       padding: 0.25rem;
       border-radius: 3rem;
-      border-bottom: 2px solid ${pageColors.primary};
-      border-left: 2px solid ${pageColors.primary};
       font-size: 1rem;
     }
   }
