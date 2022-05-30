@@ -7,6 +7,10 @@ export const infoTextWrapper = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
+
+  @media only screen and (max-width: 425px) {
+    width: calc(100% - 2rem);
+  }
 `;
 
 export const infoTextPar = styled.p`

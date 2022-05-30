@@ -12,12 +12,28 @@ export const Ad = styled.div`
   color: ${(props) => props.adstyle.banner.textColor};
   font-family: ${(props) => props.adstyle.font};
 
+  @media only screen and (max-width: 700px) {
+    margin: 0.25rem;
+  }
+
+  @media only screen and (max-width: 425px) {
+    margin: 0.75rem;
+  }
+
   &:hover {
-    font-size: 18px;
+    font-size: 1.125rem;
     width: 112.5%;
     transition: all 0.25s ease-out;
     margin: -0.25rem 1rem;
     transition-delay: 0.15s;
+
+    @media only screen and (max-width: 700px) {
+      margin: -1rem 0.25rem;
+    }
+
+    @media only screen and (max-width: 425px) {
+      margin: -0.5rem 0.25rem;
+    }
 
     & .short-description {
       opacity: 0.95;
@@ -108,6 +124,7 @@ export const WrapperLink = styled(Link)`
     transition: opacity 0.65s ease-in-out;
     gap: 0.5rem;
     letter-spacing: 0rem;
+    width: 100%;
   }
 
   & .contact {
@@ -120,15 +137,23 @@ export const WrapperLink = styled(Link)`
     font-size: 0.9rem;
     border-radius: ${(props) => props.adstyle.containers.borderRadius};
     flex-grow: 1;
-    position: relative;
+    overflow: hidden;
+  }
+  & .copied-text {
+    z-index: 999;
+    position: absolute;
+    top: -1.5rem;
+    padding: 0.25rem;
+    border-radius: 3rem;
+    font-size: 1rem;
 
-    & .copied-text {
-      z-index: 999;
+    &.phone-copied {
       position: absolute;
-      top: -1.5rem;
-      padding: 0.25rem;
-      border-radius: 3rem;
-      font-size: 1rem;
+      left: 0.25rem;
+    }
+    &.email-copied {
+      position: absolute;
+      right: 0.25rem;
     }
   }
 `;

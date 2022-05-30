@@ -5,6 +5,12 @@ export const DropdownWrapper = styled.div`
   padding: 1rem 1rem;
   display: flex;
   flex-direction: column;
+
+  @media only screen and (max-width: 650px) {
+    width: 90%;
+    margin: auto;
+    padding: 1rem 0;
+  }
 `;
 
 export const Label = styled.label`

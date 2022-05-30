@@ -8,7 +8,7 @@ const ErrorPage = () => {
     <Main>
       <Container width='50%'>
         <div className='error-wrapper'>
-          <Title>404 Not found</Title>
+          <Title marginBottom={0}>404 Not found</Title>
         </div>
       </Container>
     </Main>

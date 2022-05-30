@@ -12,6 +12,12 @@ export const PageBtn = styled.button`
   cursor: pointer;
   transition: all 0.3s;
 
+  @media only screen and (max-width: 425px) {
+    font-size: 1.5rem;
+    width: 100%;
+    top: 0;
+  }
+
   &:hover {
     transition: all 0.3s;
     background-color: ${pageColors.buttonHover};

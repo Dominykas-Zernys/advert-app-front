@@ -3,6 +3,10 @@ import { pageColors } from '../../helpers/pageColors';
 
 export const PreviewWrapper = styled.div`
   padding: 0.5rem 1rem;
+
+  @media only screen and (max-width: 650px) {
+    padding-top: 2rem;
+  }
 `;
 
 export const StyleType = styled.h3`
@@ -14,10 +18,28 @@ export const PreviewFlex = styled.div`
   display: flex;
   padding: 1rem 0;
   justify-content: space-evenly;
+
+  @media only screen and (max-width: 650px) {
+    flex-direction: column;
+
+    & > div {
+      display: flex;
+      align-items: center;
+      flex-direction: column;
+    }
+  }
 `;
 
 export const Img = styled.img`
-  height: 280px;
+  height: 16rem;
+
+  @media only screen and (max-width: 650px) {
+    height: 24rem;
+  }
+
+  @media only screen and (max-width: 650px) {
+    height: 14rem;
+  }
 `;
 
 export const previewCaption = styled.h4`

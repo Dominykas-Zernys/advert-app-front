@@ -4,7 +4,7 @@ import * as S from './Container.style';
 
 const Container = ({ width, children, minHeight = '16rem' }) => {
   return (
-    <S.Container minHeight={minHeight} width={width}>
+    <S.Container className='about-container' minHeight={minHeight} width={width}>
       {children}
     </S.Container>
   );

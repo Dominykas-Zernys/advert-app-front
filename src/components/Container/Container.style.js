@@ -12,10 +12,18 @@ export const Container = styled.div`
   position: relative;
   box-sizing: border-box;
 
+  @media only screen and (max-width: 425px) {
+    padding: 1rem;
+  }
+
   & .error-wrapper {
     position: absolute;
     left: 50%;
     top: 50%;
     transform: translate(-50%, -50%);
+  }
+
+  @media only screen and (max-width: 1024px) {
+    width: 100%;
   }
 `;

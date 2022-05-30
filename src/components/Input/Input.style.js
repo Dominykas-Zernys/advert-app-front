@@ -7,11 +7,22 @@ export const InputWrapper = styled.div`
   flex-direction: column;
   position: relative;
 
+  @media only screen and (max-width: 650px) {
+    width: 90%;
+    margin: auto;
+    padding: 1rem 0;
+  }
+
   & .plus {
     position: absolute;
     width: min-content;
-    bottom: 1.425rem;
-    left: 1.75rem;
+    bottom: 1.5rem;
+    left: 1.725rem;
+
+    @media only screen and (max-width: 650px) {
+      bottom: 1.6rem;
+      left: 0.75rem;
+    }
   }
 `;
 

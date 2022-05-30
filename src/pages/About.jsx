@@ -16,7 +16,7 @@ const About = () => {
   // Array to map out images for style preview
   const previewArr = [
     { name: 'pastel', banner: 'img/banner1.PNG', full: 'img/page1.PNG' },
-    { name: 'sssssssss', banner: 'img/banner2.PNG', full: 'img/page2.PNG' },
+    { name: 'currant', banner: 'img/banner2.PNG', full: 'img/page2.PNG' },
     { name: 'retro', banner: 'img/banner3.PNG', full: 'img/page3.PNG' },
     { name: 'elegant', banner: 'img/banner4.PNG', full: 'img/page4.PNG' },
     { name: 'playful', banner: 'img/banner5.PNG', full: 'img/page5.PNG' },

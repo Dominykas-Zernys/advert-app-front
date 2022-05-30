@@ -1,7 +1,7 @@
 export const advertStyles = [
   {
     id: 1,
-    name: 'test1',
+    name: 'pastel',
     banner: {
       primary: '#e0c5cf',
       secondary: '#b4d4e2',
@@ -47,7 +47,7 @@ export const advertStyles = [
   },
   {
     id: 2,
-    name: 'test2',
+    name: 'currant',
     banner: {
       primary: '#a13028',
       secondary: '#6f73a7',
@@ -98,7 +98,7 @@ export const advertStyles = [
   },
   {
     id: 3,
-    name: 'test3',
+    name: 'retro',
     banner: {
       primary: '#b6e081',
       secondary: '#dee762',
@@ -148,7 +148,7 @@ export const advertStyles = [
   },
   {
     id: 4,
-    name: 'test4',
+    name: 'elegant',
     banner: {
       primary: '#8782b675',
       secondary: '#8782b6',
@@ -199,7 +199,7 @@ export const advertStyles = [
   },
   {
     id: 5,
-    name: 'test5',
+    name: 'playful',
     banner: {
       primary: '#9FEDD7',
       secondary: '#FCE181',
@@ -250,7 +250,7 @@ export const advertStyles = [
   },
   {
     id: 6,
-    name: 'test6',
+    name: 'minimal',
     banner: {
       primary: '#dfcab586',
       secondary: '#dfcab5',
@@ -301,11 +301,11 @@ export const advertStyles = [
   },
   {
     id: 7,
-    name: 'test7',
+    name: 'social media',
     banner: {
       primary: '#123c6922',
-      secondary: '#2869af',
-      textColor: '#d4dbe2',
+      secondary: '#3b81cc',
+      textColor: '#123C69',
       border: '',
     },
     background: {
@@ -351,7 +351,7 @@ export const advertStyles = [
   },
   {
     id: 8,
-    name: 'test8',
+    name: 'letter',
     banner: {
       primary: '#cfcfcf',
       secondary: '#ffffff',

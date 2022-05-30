@@ -55,11 +55,13 @@ const Advert = ({ adInfo }) => {
           <div className='title'>
             <h3 className='title-header'>{capitalize(adInfo.title)}</h3>{' '}
             <div className='contacts'>
+              {phoneCopied && <span className='copied-text phone-copied'>Phone copied!</span>}
               <h3 data-id={adInfo.phone} onClick={handlePhoneCopy} className='contact'>
-                {phoneCopied && <span className='copied-text'>Phone copied!</span>} +{adInfo.phone}
+                +{adInfo.phone}
               </h3>
+              {emailCopied && <span className='copied-text email-copied'>Email copied!</span>}
               <h3 data-id={adInfo.email} onClick={handleEmailCopy} className='contact'>
-                {emailCopied && <span className='copied-text'>Email copied!</span>} {adInfo.email}
+                {adInfo.email}
               </h3>
             </div>
           </div>

@@ -10,6 +10,10 @@ export const Nav = styled.nav`
   display: flex;
   justify-content: flex-end;
 
+  @media only screen and (max-width: 425px) {
+    flex-direction: column;
+  }
+
   & button {
     border-radius: 2rem;
     padding: 0.85rem 1rem;
@@ -30,6 +34,10 @@ export const Nav = styled.nav`
     border-bottom: 2px solid #ffffff;
     border-left: 1px solid #ffffff;
     transition: all 0.5s;
+
+    @media only screen and (max-width: 425px) {
+      font-size: 1.5rem;
+    }
 
     &:hover {
       border-left: 2px solid ${pageColors.primary};
@@ -54,6 +62,14 @@ export const ImgWrapper = styled.div`
   top: 3px;
   border-radius: 3rem;
   overflow: hidden;
+
+  @media only screen and (max-width: 425px) {
+    height: 10rem;
+    width: 25rem;
+    left: 50%;
+    transform: translate(-50%);
+    top: 0;
+  }
 
   & img {
     width: 100%;

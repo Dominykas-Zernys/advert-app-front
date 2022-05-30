@@ -7,6 +7,12 @@ export const InputWrap = styled.div`
   flex-direction: column;
   justify-content: space-between;
 
+  @media only screen and (max-width: 650px) {
+    width: 90%;
+    margin: auto;
+    padding: 1rem 0;
+  }
+
   & .hidden-label {
     border: 1px solid #ccc;
     display: inline-block;

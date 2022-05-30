@@ -7,12 +7,29 @@ export const Grid = styled.div`
   justify-items: center;
   align-items: center;
   column-gap: 2rem;
+
+  @media only screen and (max-width: 700px) {
+    column-gap: 0.5rem;
+  }
+
+  @media only screen and (max-width: 650px) {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  @media only screen and (max-width: 425px) {
+    grid-template-columns: 1fr;
+    margin: 0 1.5rem;
+  }
 `;
 
 export const NumbersWrapper = styled.form`
   display: flex;
   padding: 0.5rem;
   gap: 1rem;
+
+  @media only screen and (max-width: 425px) {
+    flex-wrap: wrap;
+  }
 
   & input {
     display: none;

@@ -23,4 +23,8 @@ export const CategoriesWrap = styled.div`
     border-top-right-radius: 1rem;
     border-bottom: 2px solid #ffffff;
   }
+
+  @media only screen and (max-width: 425px) {
+    flex-wrap: wrap;
+  }
 `;
