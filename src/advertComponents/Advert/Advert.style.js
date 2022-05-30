@@ -139,6 +139,7 @@ export const WrapperLink = styled(Link)`
     flex-grow: 1;
     overflow: hidden;
   }
+
   & .copied-text {
     z-index: 999;
     position: absolute;

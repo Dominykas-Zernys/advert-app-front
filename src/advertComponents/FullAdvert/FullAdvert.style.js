@@ -19,6 +19,10 @@ export const TitleWrapper = styled.div`
   padding: 4rem 1rem 1rem;
   display: flex;
   justify-content: center;
+
+  @media only screen and (max-width: 650px) {
+    padding-top: 1rem;
+  }
 `;
 
 export const Title = styled.h1`
@@ -37,6 +41,10 @@ export const Title = styled.h1`
   text-overflow: ellipsis;
   white-space: nowrap;
   overflow: hidden;
+
+  @media only screen and (max-width: 650px) {
+    white-space: normal;
+  }
 `;
 
 export const ContactsWrapper = styled.div`
@@ -44,6 +52,18 @@ export const ContactsWrapper = styled.div`
   justify-content: center;
   padding: 1rem;
   gap: 5rem;
+
+  @media only screen and (max-width: 700px) {
+    gap: 2rem;
+  }
+
+  @media only screen and (max-width: 650px) {
+    flex-direction: column;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+    padding: 0;
+  }
 `;
 
 export const Contact = styled.h2`
@@ -61,6 +81,12 @@ export const Contact = styled.h2`
   border-right: ${(props) => props.adStyle.containers.secondary.borderRight};
   border-left: ${(props) => props.adStyle.containers.secondary.borderLeft};
   border-bottom: ${(props) => props.adStyle.containers.secondary.borderBottom};
+  overflow: hidden;
+  white-space: nowrap;
+
+  @media only screen and (max-width: 650px) {
+    max-width: 80%;
+  }
 
   &:hover {
     font-size: 1.32rem;
@@ -75,6 +101,10 @@ export const ContentWrapper = styled.div`
   align-items: stretch;
   justify-content: center;
   gap: 3rem;
+
+  @media only screen and (max-width: 700px) {
+    flex-direction: column;
+  }
 `;
 
 export const Description = styled.p`
@@ -92,6 +122,11 @@ export const Description = styled.p`
   border-left: ${(props) => props.adStyle.containers.primary.borderLeft};
   border-bottom: ${(props) => props.adStyle.containers.primary.borderBottom};
   word-break: break-word;
+
+  @media only screen and (max-width: 700px) {
+    width: 90%;
+    margin: auto;
+  }
 `;
 
 export const Img = styled.div`
@@ -106,4 +141,10 @@ export const Img = styled.div`
   border-right: ${(props) => props.adStyle.containers.primary.borderRight};
   border-left: ${(props) => props.adStyle.containers.primary.borderLeft};
   border-bottom: ${(props) => props.adStyle.containers.primary.borderBottom};
+
+  @media only screen and (max-width: 700px) {
+    min-height: 50vw;
+    width: 90%;
+    margin: auto;
+  }
 `;
