@@ -18,7 +18,6 @@ export async function fetchPostAd(endpoint, objectToSend, token) {
     headers: { ...authorization },
     body: objectToSend,
   });
-  console.log(JSON.stringify(objectToSend));
   const resInJson = await res.json();
   return resInJson;
 }

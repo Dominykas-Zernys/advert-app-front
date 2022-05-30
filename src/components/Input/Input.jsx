@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 import PropTypes from 'prop-types';
 import * as S from './Input.style';
 
@@ -19,7 +19,8 @@ const Input = ({ labelText, type, inputValue, setInputValue, height, placeholder
       )}
       {type === 'textarea' && (
         <S.TextAreaCount inputLength={inputValue.length} maxLength={maxLength}>
-          Symbols total: <span>{inputValue.length}</span>/{maxLength}
+          Symbols total: <span className='current-count'>{inputValue.length}</span>
+          <span>/{maxLength}</span>
         </S.TextAreaCount>
       )}
       {placeholder === 'Tel' ? <span className='plus'>+</span> : ''}

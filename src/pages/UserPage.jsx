@@ -1,5 +1,5 @@
-import React, { useContext, useEffect, useState } from 'react';
-import { Link, useNavigate } from 'react-router-dom';
+import React, { useEffect, useState } from 'react';
+import { Link } from 'react-router-dom';
 import AdvertsGrid from '../components/AdvertsGrid/AdvertsGrid';
 import Container from '../components/Container/Container';
 import Filter from '../components/Filter/Filter';
@@ -7,8 +7,6 @@ import FilterWrapper from '../components/FilterWrapper/FilterWrapper';
 import Input from '../components/Input/Input';
 import Loading from '../components/Loading/Loading';
 import Main from '../components/Main/Main';
-import Wrapper from '../components/Wrapper/Wrapper';
-import { AuthContext } from '../helpers/AuthContext';
 import { fetchGet } from '../helpers/fetchFunctions';
 import Subtitle from '../UI/Subtitle/Subtitle';
 import Text from '../UI/Text/Text';

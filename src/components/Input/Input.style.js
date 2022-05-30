@@ -71,6 +71,10 @@ export const TextAreaCount = styled.div`
   right: 2rem;
 
   & span {
+    font-weight: 900;
+  }
+
+  & span.current-count {
     color: ${(props) => (props.inputLength < 10 || props.inputLength > props.maxLength ? pageColors.danger : 'inherit')};
   }
 `;

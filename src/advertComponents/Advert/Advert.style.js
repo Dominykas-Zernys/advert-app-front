@@ -1,6 +1,5 @@
 import { Link } from 'react-router-dom';
 import styled from 'styled-components';
-import { pageColors } from '../../helpers/pageColors';
 
 export const Ad = styled.div`
   border-radius: 2rem;

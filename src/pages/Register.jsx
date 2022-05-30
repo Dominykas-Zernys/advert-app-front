@@ -1,10 +1,9 @@
-import React, { useContext, useEffect, useState } from 'react';
-import { Link, useNavigate } from 'react-router-dom';
+import React, { useState } from 'react';
+import { Link } from 'react-router-dom';
 import Container from '../components/Container/Container';
 import Form from '../components/Form/Form';
 import Input from '../components/Input/Input';
 import Main from '../components/Main/Main';
-import { AuthContext } from '../helpers/AuthContext';
 import { fetchPost } from '../helpers/fetchFunctions';
 import { areThereEmptyFields, formatInfoText, restartStates } from '../helpers/miscFunctions';
 import { pageColors } from '../helpers/pageColors';
