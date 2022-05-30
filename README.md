@@ -60,7 +60,8 @@ There are 8 pages in total created on this React application:
 
 - There are 21 components used in total in this application. Some were designed with the use of storybook component explorer. There are also 6 helper files with various functions and variables;
 - Application uses UseState, UseEffect, UseContext, UseNavigate and UseParams hooks;
-- Dotenv, react-router-dom and storybook node packages were installed along with all the necessary React packages.
+- Dotenv, react-router-dom and storybook node packages were installed along with all the necessary React packages;
+- The application is created with full responsive design for all screen sizes.
 
 ### How to use
 
