@@ -30,6 +30,11 @@ const Input = ({ labelText, type, inputValue, setInputValue, height, placeholder
 Input.propTypes = {
   labelText: PropTypes.string.isRequired,
   type: PropTypes.string.isRequired,
+  inputValue: PropTypes.string.isRequired,
+  setInputValue: PropTypes.func,
+  height: PropTypes.string,
+  placeholder: PropTypes.string,
+  maxLength: PropTypes.number,
 };
 
 export default Input;

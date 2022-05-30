@@ -21,6 +21,6 @@ const StylePreview = ({ name, bannerImg, pageImg }) => {
   );
 };
 
-StylePreview.propTypes = {};
+StylePreview.propTypes = { name: PropTypes.string.isRequired, bannerImg: PropTypes.string.isRequired, pageImg: PropTypes.string.isRequired };
 
 export default StylePreview;

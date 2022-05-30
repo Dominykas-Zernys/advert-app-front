@@ -14,6 +14,7 @@ Form.propTypes = {
   children: PropTypes.node.isRequired,
   submitHandler: PropTypes.func.isRequired,
   type: PropTypes.string.isRequired,
+  changeHandler: PropTypes.func.isRequired,
 };
 
 export default Form;

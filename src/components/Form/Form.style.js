@@ -12,8 +12,8 @@ export const Form = styled.form`
     }
 
     & button {
-      justify-self: center;
       grid-column: 1 / span 2;
+      justify-self: center;
 
       @media only screen and (max-width: 650px) {
         grid-column: 1 / span 1;
@@ -23,8 +23,8 @@ export const Form = styled.form`
 
   &.login {
     grid-template-columns: 1fr;
-    width: 75%;
     margin: auto;
+    width: 75%;
 
     & button {
       justify-self: center;
@@ -47,8 +47,8 @@ export const Form = styled.form`
     }
 
     & button {
-      justify-self: center;
       grid-column: 1 / span 2;
+      justify-self: center;
 
       @media only screen and (max-width: 650px) {
         grid-column: 1 / span 1;
@@ -57,11 +57,11 @@ export const Form = styled.form`
   }
 
   & .loading-text {
-    padding: 1rem;
-    color: ${pageColors.hover};
-    font-weight: 900;
-    display: flex;
     align-items: center;
+    color: ${pageColors.hover};
+    display: flex;
+    font-weight: 900;
     justify-content: center;
+    padding: 1rem;
   }
 `;

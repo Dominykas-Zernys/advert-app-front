@@ -11,6 +11,6 @@ const ImageInput = ({ setState }) => {
   );
 };
 
-ImageInput.propTypes = {};
+ImageInput.propTypes = { setState: PropTypes.func.isRequired };
 
 export default ImageInput;

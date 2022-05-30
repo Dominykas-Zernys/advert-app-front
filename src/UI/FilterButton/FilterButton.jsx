@@ -16,6 +16,6 @@ const FilterButton = ({ labelText, id, checkedBtn = false }) => {
   );
 };
 
-FilterButton.propTypes = {};
+FilterButton.propTypes = { labelText: PropTypes.string.isRequired, id: PropTypes.number.isRequired, checkedBtn: PropTypes.bool };
 
 export default FilterButton;

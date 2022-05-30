@@ -2,11 +2,11 @@ import styled from 'styled-components';
 import { pageColors } from '../../helpers/pageColors';
 
 export const Grid = styled.div`
+  align-items: center;
+  column-gap: 2rem;
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   justify-items: center;
-  align-items: center;
-  column-gap: 2rem;
 
   @media only screen and (max-width: 700px) {
     column-gap: 0.5rem;
@@ -24,8 +24,8 @@ export const Grid = styled.div`
 
 export const NumbersWrapper = styled.form`
   display: flex;
-  padding: 0.5rem;
   gap: 1rem;
+  padding: 0.5rem;
 
   @media only screen and (max-width: 425px) {
     flex-wrap: wrap;
@@ -36,28 +36,28 @@ export const NumbersWrapper = styled.form`
   }
 
   & label {
-    padding: 0.5rem 1rem;
-    border-top: 2px solid ${pageColors.primary};
-    border-left: 2px solid ${pageColors.primary};
-    display: inline-block;
-    cursor: pointer;
-    transition: background-color 0.5s;
-    border-radius: 2rem;
     border-bottom: 0px;
+    border-left: 2px solid ${pageColors.primary};
+    border-radius: 2rem;
     border-right: 0px;
+    border-top: 2px solid ${pageColors.primary};
+    cursor: pointer;
+    display: inline-block;
+    padding: 0.5rem 1rem;
+    transition: background-color 0.5s;
   }
 
   & label:hover {
-    border-right: 2px solid ${pageColors.primary};
-    border-bottom: 2px solid ${pageColors.primary};
-    margin-right: -2px;
     background-color: ${pageColors.hover};
+    border-bottom: 2px solid ${pageColors.primary};
+    border-right: 2px solid ${pageColors.primary};
+    margin-right: -2px;
   }
 
   & input:checked ~ label {
-    border-right: 2px solid ${pageColors.primary};
     border-bottom: 2px solid ${pageColors.primary};
-    margin-right: -2px;
+    border-right: 2px solid ${pageColors.primary};
     font-weight: 900;
+    margin-right: -2px;
   }
 `;

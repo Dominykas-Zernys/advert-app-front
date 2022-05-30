@@ -15,24 +15,24 @@ export const Nav = styled.nav`
   }
 
   & button {
-    border-radius: 2rem;
-    padding: 0.85rem 1rem;
-    margin: 0;
     align-self: center;
+    border-radius: 2rem;
+    margin: 0;
+    padding: 0.85rem 1rem;
   }
 
   & a {
-    font-size: 1.1rem;
-    color: ${pageColors.text};
-    padding: 0.5rem calc(1rem + 1px);
-    margin: 0.5rem 0;
-    display: flex;
     align-items: center;
-    border-top-left-radius: 1rem;
     border-bottom-left-radius: 1.5rem;
-    position: relative;
     border-bottom: 2px solid #ffffff;
     border-left: 1px solid #ffffff;
+    border-top-left-radius: 1rem;
+    color: ${pageColors.text};
+    display: flex;
+    font-size: 1.1rem;
+    margin: 0.5rem 0;
+    padding: 0.5rem calc(1rem + 1px);
+    position: relative;
     transition: all 0.5s;
 
     @media only screen and (max-width: 425px) {
@@ -48,32 +48,32 @@ export const Nav = styled.nav`
 
   .active {
     border-bottom: 2px solid ${pageColors.primary};
-    transition: border-bottom 0.5s;
     font-weight: 900;
+    transition: border-bottom 0.5s;
   }
 `;
 
 export const ImgWrapper = styled.div`
-  margin-right: auto;
-  height: 4rem;
-  width: 14rem;
-  position: relative;
-  left: -2rem;
-  top: 3px;
   border-radius: 3rem;
+  height: 4rem;
+  left: -2rem;
+  margin-right: auto;
   overflow: hidden;
+  position: relative;
+  top: 3px;
+  width: 14rem;
 
   @media only screen and (max-width: 425px) {
     height: 10rem;
-    width: 25rem;
     left: 50%;
-    transform: translate(-50%);
     top: 0;
+    transform: translate(-50%);
+    width: 25rem;
   }
 
   & img {
-    width: 100%;
     height: 100%;
     object-fit: cover;
+    width: 100%;
   }
 `;

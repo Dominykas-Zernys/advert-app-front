@@ -61,7 +61,21 @@ const AdvertsGrid = ({ adverts, searchValue, currentCategory }) => {
 };
 
 AdvertsGrid.propTypes = {
-  // adverts: PropTypes.arrayOf,
+  adverts: PropTypes.arrayOf(
+    PropTypes.shape({
+      categoryId: PropTypes.number.isRequired,
+      createdAt: PropTypes.string.isRequired,
+      email: PropTypes.string.isRequired,
+      id: PropTypes.number.isRequired,
+      imageSrc: PropTypes.string.isRequired,
+      phone: PropTypes.string.isRequired,
+      shortDescription: PropTypes.string.isRequired,
+      styleId: PropTypes.number.isRequired,
+      title: PropTypes.string.isRequired,
+    })
+  ).isRequired,
+  searchValue: PropTypes.string,
+  currentCategory: PropTypes.number.isRequired,
 };
 
 export default AdvertsGrid;

@@ -3,14 +3,14 @@ import styled from 'styled-components';
 import { pageColors } from '../../helpers/pageColors';
 
 export const Ad = styled.div`
-  width: 100%;
   border-radius: 2rem;
-  overflow: hidden;
-  margin: 1rem;
-  height: 20em;
-  transition: all 0.5s ease-out;
   color: ${(props) => props.adstyle.banner.textColor};
   font-family: ${(props) => props.adstyle.font};
+  height: 20em;
+  margin: 1rem;
+  overflow: hidden;
+  transition: all 0.5s ease-out;
+  width: 100%;
 
   @media only screen and (max-width: 700px) {
     margin: 0.25rem;
@@ -22,10 +22,10 @@ export const Ad = styled.div`
 
   &:hover {
     font-size: 1.125rem;
-    width: 112.5%;
-    transition: all 0.25s ease-out;
     margin: -0.25rem 1rem;
     transition-delay: 0.15s;
+    transition: all 0.25s ease-out;
+    width: 112.5%;
 
     @media only screen and (max-width: 700px) {
       margin: -1rem 0.25rem;
@@ -56,101 +56,101 @@ export const Ad = styled.div`
 `;
 
 export const WrapperLink = styled(Link)`
-  width: 100%;
   background-color: ${(props) => props.adstyle.banner.primary};
-  height: 100%;
+  box-sizing: border-box;
   display: flex;
   flex-direction: column;
-  padding: 2rem;
-  box-sizing: border-box;
   font-family: ${(props) => props.adstyle.font};
+  height: 100%;
+  padding: 2rem;
+  width: 100%;
 
   & .title {
-    padding: 0.25rem;
-    margin-bottom: 1rem;
     font-size: 1.2rem;
+    margin-bottom: 1rem;
+    padding: 0.25rem;
     position: relative;
 
     & .title-header {
-      position: relative;
-      display: flex;
       align-items: center;
-      justify-content: center;
-      bottom: 0.25rem;
-      right: 0.25rem;
-      padding: 0.25rem;
-      width: 100%;
-      height: 100%;
       background-color: ${(props) => props.adstyle.banner.secondary};
-      border: ${(props) => props.adstyle.banner.border};
       border-radius: ${(props) => props.adstyle.containers.borderRadius};
+      border: ${(props) => props.adstyle.banner.border};
+      bottom: 0.25rem;
+      display: flex;
       font-size: inherit;
+      height: 100%;
+      justify-content: center;
+      padding: 0.25rem;
+      position: relative;
+      right: 0.25rem;
       transition: opacity 0.65s;
+      width: 100%;
     }
   }
 
   & .content {
-    flex-grow: 1;
-    position: relative;
     background-image: url(${(props) => props.imagesrc});
     background-position: center;
     background-size: cover;
+    flex-grow: 1;
+    position: relative;
   }
 
   & .short-description {
-    box-sizing: border-box;
-    padding: 1rem;
-    opacity: 0;
-    height: 100%;
-    width: 100%;
     background-color: ${(props) => props.adstyle.banner.secondary};
     border: ${(props) => props.adstyle.banner.border};
+    box-sizing: border-box;
+    height: 100%;
+    opacity: 0;
+    padding: 1rem;
     transition-delay: 0.15s;
     transition: opacity 0.65s ease-in-out;
+    width: 100%;
     word-break: break-word;
   }
 
   & .contacts {
-    position: absolute;
-    top: 0;
-    right: 0;
-    justify-content: space-around;
     display: flex;
     flex-direction: row;
-    width: 100%;
+    gap: 0.5rem;
     height: 100%;
+    justify-content: space-around;
+    letter-spacing: 0rem;
     opacity: 0;
+    position: absolute;
+    right: 0;
+    top: 0;
     transition-delay: 0.15s;
     transition: opacity 0.65s ease-in-out;
-    gap: 0.5rem;
-    letter-spacing: 0rem;
+    width: 100%;
     width: 100%;
   }
 
   & .contact {
-    display: flex;
     align-items: center;
-    justify-content: center;
     background-color: ${(props) => props.adstyle.banner.secondary};
-    border: ${(props) => props.adstyle.banner.border};
-    padding: 0.25rem;
-    font-size: 0.9rem;
     border-radius: ${(props) => props.adstyle.containers.borderRadius};
+    border: ${(props) => props.adstyle.banner.border};
+    display: flex;
     flex-grow: 1;
+    font-size: 0.9rem;
+    justify-content: center;
     overflow: hidden;
+    padding: 0.25rem;
   }
 
   & .copied-text {
-    z-index: 999;
-    position: absolute;
-    top: -1.5rem;
-    padding: 0.25rem;
     border-radius: 3rem;
     font-size: 1rem;
+    padding: 0.25rem;
+    position: absolute;
+    top: -1.5rem;
+    z-index: 999;
 
     &.phone-copied {
-      position: absolute;
       left: 0.25rem;
+      position: absolute;
     }
     &.email-copied {
       position: absolute;

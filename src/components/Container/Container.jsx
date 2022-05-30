@@ -10,6 +10,6 @@ const Container = ({ width, children, minHeight = '16rem' }) => {
   );
 };
 
-Container.propTypes = { width: PropTypes.string, children: PropTypes.node };
+Container.propTypes = { width: PropTypes.string, children: PropTypes.node, minHeight: PropTypes.oneOfType([PropTypes.string, PropTypes.number]) };
 
 export default Container;

@@ -74,6 +74,17 @@ const Advert = ({ adInfo }) => {
   );
 };
 
-Advert.propTypes = {};
+Advert.propTypes = {
+  adInfo: PropTypes.shape({
+    id: PropTypes.number.isRequired,
+    email: PropTypes.string.isRequired,
+    shortDescription: PropTypes.string.isRequired,
+    imageSrc: PropTypes.string.isRequired,
+    phone: PropTypes.string.isRequired,
+    styleId: PropTypes.number.isRequired,
+    title: PropTypes.string.isRequired,
+    createdAt: PropTypes.string.isRequired,
+  }),
+};
 
 export default Advert;

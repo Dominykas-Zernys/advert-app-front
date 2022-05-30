@@ -1,14 +1,14 @@
 import styled from 'styled-components';
 
 export const AdWrapper = styled.div`
-  min-height: 40vw;
-  font-family: ${(props) => props.adStyle.font};
-  display: flex;
-  flex-direction: column;
+  background: ${(props) => props.adStyle.background.background};
   border-radius: ${(props) => props.adStyle.background.borderRadius};
   border: ${(props) => props.adStyle.background.border};
-  background: ${(props) => props.adStyle.background.background};
   box-shadow: ${(props) => props.adStyle.background.shadow};
+  display: flex;
+  flex-direction: column;
+  font-family: ${(props) => props.adStyle.font};
+  min-height: 40vw;
 
   & .container {
     border-radius: ${(props) => props.adStyle.containers.borderRadius};
@@ -16,9 +16,9 @@ export const AdWrapper = styled.div`
 `;
 
 export const TitleWrapper = styled.div`
-  padding: 4rem 1rem 1rem;
   display: flex;
   justify-content: center;
+  padding: 4rem 1rem 1rem;
 
   @media only screen and (max-width: 650px) {
     padding-top: 1rem;
@@ -27,20 +27,20 @@ export const TitleWrapper = styled.div`
 
 export const Title = styled.h1`
   background: ${(props) => props.adStyle.title.background};
-  color: ${(props) => props.adStyle.title.color};
-  box-shadow: ${(props) => props.adStyle.title.shadow};
-  font-weight: 100;
-  padding: 0.25rem 4rem;
-  font-size: 2.5rem;
-  display: inline-block;
-  border: ${(props) => props.adStyle.title.border};
-  border-top: ${(props) => props.adStyle.title.borderTop};
-  border-right: ${(props) => props.adStyle.title.borderRight};
-  border-left: ${(props) => props.adStyle.title.borderLeft};
   border-bottom: ${(props) => props.adStyle.title.borderBottom};
+  border-left: ${(props) => props.adStyle.title.borderLeft};
+  border-right: ${(props) => props.adStyle.title.borderRight};
+  border-top: ${(props) => props.adStyle.title.borderTop};
+  border: ${(props) => props.adStyle.title.border};
+  box-shadow: ${(props) => props.adStyle.title.shadow};
+  color: ${(props) => props.adStyle.title.color};
+  display: inline-block;
+  font-size: 2.5rem;
+  font-weight: 100;
+  overflow: hidden;
+  padding: 0.25rem 4rem;
   text-overflow: ellipsis;
   white-space: nowrap;
-  overflow: hidden;
 
   @media only screen and (max-width: 650px) {
     white-space: normal;
@@ -49,39 +49,39 @@ export const Title = styled.h1`
 
 export const ContactsWrapper = styled.div`
   display: flex;
+  gap: 5rem;
   justify-content: center;
   padding: 1rem;
-  gap: 5rem;
 
   @media only screen and (max-width: 700px) {
     gap: 2rem;
   }
 
   @media only screen and (max-width: 650px) {
-    flex-direction: column;
-    width: 100%;
-    justify-content: center;
     align-items: center;
+    flex-direction: column;
+    justify-content: center;
     padding: 0;
+    width: 100%;
   }
 `;
 
 export const Contact = styled.h2`
-  padding: 1rem;
   background: ${(props) => props.adStyle.containers.secondary.background};
-  box-shadow: ${(props) => props.adStyle.containers.secondary.shadow};
+  border-bottom: ${(props) => props.adStyle.containers.secondary.borderBottom};
+  border-left: ${(props) => props.adStyle.containers.secondary.borderLeft};
+  border-right: ${(props) => props.adStyle.containers.secondary.borderRight};
+  border-top: ${(props) => props.adStyle.containers.secondary.borderTop};
   border: ${(props) => props.adStyle.containers.secondary.border};
-  min-width: 20rem;
-  font-weight: 100;
-  transition: font-size 0.5s, padding 0.5s;
+  box-shadow: ${(props) => props.adStyle.containers.secondary.shadow};
+  color: ${(props) => props.adStyle.containers.secondary.textColor};
   cursor: pointer;
   font-size: 1.2rem;
-  color: ${(props) => props.adStyle.containers.secondary.textColor};
-  border-top: ${(props) => props.adStyle.containers.secondary.borderTop};
-  border-right: ${(props) => props.adStyle.containers.secondary.borderRight};
-  border-left: ${(props) => props.adStyle.containers.secondary.borderLeft};
-  border-bottom: ${(props) => props.adStyle.containers.secondary.borderBottom};
+  font-weight: 100;
+  min-width: 20rem;
   overflow: hidden;
+  padding: 1rem;
+  transition: font-size 0.5s, padding 0.5s;
   white-space: nowrap;
 
   @media only screen and (max-width: 650px) {
@@ -95,56 +95,60 @@ export const Contact = styled.h2`
 `;
 
 export const ContentWrapper = styled.div`
-  padding: 2rem;
-  flex-grow: 2;
-  display: flex;
   align-items: stretch;
-  justify-content: center;
+  display: flex;
+  flex-grow: 2;
   gap: 3rem;
+  justify-content: center;
+  padding: 2rem;
 
   @media only screen and (max-width: 700px) {
-    flex-direction: column;
+    flex-direction: column-reverse;
   }
 `;
 
 export const Description = styled.p`
   background-color: ${(props) => props.adStyle.containers.primary.background};
-  box-shadow: ${(props) => props.adStyle.containers.primary.shadow};
+  border-bottom: ${(props) => props.adStyle.containers.primary.borderBottom};
+  border-left: ${(props) => props.adStyle.containers.primary.borderLeft};
+  border-right: ${(props) => props.adStyle.containers.primary.borderRight};
+  border-top: ${(props) => props.adStyle.containers.primary.borderTop};
   border: ${(props) => props.adStyle.containers.primary.border};
+  box-shadow: ${(props) => props.adStyle.containers.primary.shadow};
+  color: ${(props) => props.adStyle.containers.primary.textColor};
+  font-size: 1.2rem;
+  padding: 1rem;
   text-align: left;
   text-indent: 2rem;
   width: 25rem;
-  padding: 1rem;
-  font-size: 1.2rem;
-  color: ${(props) => props.adStyle.containers.primary.textColor};
-  border-top: ${(props) => props.adStyle.containers.primary.borderTop};
-  border-right: ${(props) => props.adStyle.containers.primary.borderRight};
-  border-left: ${(props) => props.adStyle.containers.primary.borderLeft};
-  border-bottom: ${(props) => props.adStyle.containers.primary.borderBottom};
   word-break: break-word;
 
   @media only screen and (max-width: 700px) {
-    width: 90%;
     margin: auto;
+    width: 90%;
   }
 `;
 
 export const Img = styled.div`
-  box-shadow: ${(props) => props.adStyle.containers.primary.shadow};
-  border: ${(props) => props.adStyle.containers.primary.border};
-  width: 40rem;
   background-image: url(${(props) => props.imageSrc});
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
-  border-top: ${(props) => props.adStyle.containers.primary.borderTop};
-  border-right: ${(props) => props.adStyle.containers.primary.borderRight};
-  border-left: ${(props) => props.adStyle.containers.primary.borderLeft};
   border-bottom: ${(props) => props.adStyle.containers.primary.borderBottom};
+  border-left: ${(props) => props.adStyle.containers.primary.borderLeft};
+  border-right: ${(props) => props.adStyle.containers.primary.borderRight};
+  border-top: ${(props) => props.adStyle.containers.primary.borderTop};
+  border: ${(props) => props.adStyle.containers.primary.border};
+  box-shadow: ${(props) => props.adStyle.containers.primary.shadow};
+  width: 40rem;
+
+  @media only screen and (max-width: 1500px) {
+    min-height: 30vw;
+  }
 
   @media only screen and (max-width: 700px) {
-    min-height: 50vw;
-    width: 90%;
     margin: auto;
+    min-height: 50vw;
+    width: 100%;
   }
 `;

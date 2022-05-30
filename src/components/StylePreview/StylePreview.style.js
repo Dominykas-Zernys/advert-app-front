@@ -16,15 +16,15 @@ export const StyleType = styled.h3`
 
 export const PreviewFlex = styled.div`
   display: flex;
-  padding: 1rem 0;
   justify-content: space-evenly;
+  padding: 1rem 0;
 
   @media only screen and (max-width: 650px) {
     flex-direction: column;
 
     & > div {
-      display: flex;
       align-items: center;
+      display: flex;
       flex-direction: column;
     }
   }

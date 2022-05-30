@@ -2,14 +2,14 @@ import styled from 'styled-components';
 import { pageColors } from '../../helpers/pageColors';
 
 export const DropdownWrapper = styled.div`
-  padding: 1rem 1rem;
   display: flex;
   flex-direction: column;
+  padding: 1rem 1rem;
 
   @media only screen and (max-width: 650px) {
-    width: 90%;
     margin: auto;
     padding: 1rem 0;
+    width: 90%;
   }
 `;
 
@@ -18,10 +18,10 @@ export const Label = styled.label`
 `;
 
 export const Dropdown = styled.select`
-  padding: 0.5rem 0.75rem;
   border-radius: 1rem;
   border: 1px solid ${pageColors.primary};
   font-family: inherit;
+  padding: 0.5rem 0.75rem;
 
   &:focus {
     outline: none;

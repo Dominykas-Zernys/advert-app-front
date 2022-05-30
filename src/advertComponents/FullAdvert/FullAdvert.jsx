@@ -71,6 +71,16 @@ const FullAdvert = ({ adInfo }) => {
   );
 };
 
-// FullAdvert.propTypes = {};
+FullAdvert.propTypes = {
+  adInfo: PropTypes.shape({
+    id: PropTypes.number.isRequired,
+    email: PropTypes.string.isRequired,
+    description: PropTypes.string.isRequired,
+    imageSrc: PropTypes.string.isRequired,
+    phone: PropTypes.string.isRequired,
+    styleId: PropTypes.number.isRequired,
+    title: PropTypes.string.isRequired,
+  }),
+};
 
 export default FullAdvert;

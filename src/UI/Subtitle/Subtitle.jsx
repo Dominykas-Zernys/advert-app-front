@@ -6,6 +6,6 @@ const Subtitle = ({ children, noMargin = false }) => {
   return <S.H2 noMargin={noMargin}>{children}</S.H2>;
 };
 
-Subtitle.propTypes = { children: PropTypes.string.isRequired };
+Subtitle.propTypes = { children: PropTypes.string.isRequired, noMargin: PropTypes.bool };
 
 export default Subtitle;
