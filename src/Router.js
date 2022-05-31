@@ -28,9 +28,7 @@ const Router = () => {
           <Route path='/user' element={<UserPage />} />
         </Route>
         <Route path='/about' element={<About />} />
-        <Route path='/advert/:adId' element={<ProtectedRoute />}>
-          <Route path='/advert/:adId' element={<AdvertPage />} />
-        </Route>
+        <Route path='/advert/:adId' element={<AdvertPage />} />
         <Route path='/create-advert' element={<ProtectedRoute />}>
           <Route path='/create-advert' element={<NewAdvert />} />
         </Route>
