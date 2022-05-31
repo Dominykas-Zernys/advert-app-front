@@ -21,7 +21,7 @@ export const Nav = styled.nav`
     padding: 0.85rem 1rem;
   }
 
-  & a {
+  & a.nav-link {
     align-items: center;
     border-bottom-left-radius: 1.5rem;
     border-bottom: 2px solid #ffffff;
@@ -58,7 +58,7 @@ export const ImgWrapper = styled.div`
   height: 4rem;
   left: -2rem;
   margin-right: auto;
-  overflow: hidden;
+  overflow: visible;
   position: relative;
   top: 3px;
   width: 14rem;
@@ -69,6 +69,12 @@ export const ImgWrapper = styled.div`
     top: 0;
     transform: translate(-50%);
     width: 25rem;
+  }
+
+  & a {
+    height: 100%;
+    width: 100%;
+    padding: 0;
   }
 
   & img {

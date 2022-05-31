@@ -12,6 +12,18 @@ export const PageBtn = styled.button`
   padding: 1rem 1.5rem;
   transition: all 0.3s;
 
+  &.back-to-home {
+    position: absolute;
+    padding: 0.5rem;
+    top: 4rem;
+
+    @media only screen and (max-width: 425px) {
+      top: 7rem;
+      width: 80%;
+      left: 10%;
+    }
+  }
+
   @media only screen and (max-width: 425px) {
     font-size: 1.5rem;
     top: 0;

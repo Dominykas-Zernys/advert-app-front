@@ -71,7 +71,7 @@ const Register = () => {
           <Input inputValue={username} setInputValue={setUsername} type='text' labelText='Create your username:' />
           <Input inputValue={password} setInputValue={setPassword} type='password' labelText='Create a password:' />
           <Input inputValue={repeatPassword} setInputValue={setRepeatPassword} type='password' labelText='Repeat the password:' />
-          <PageButton>Let's go!</PageButton>
+          <PageButton>Register</PageButton>
         </Form>
         {submitSuccess && (
           <InfoText color={pageColors.text}>

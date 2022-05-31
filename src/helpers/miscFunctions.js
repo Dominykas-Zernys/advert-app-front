@@ -16,7 +16,7 @@ export function formatInfoText(infoText) {
     textToReturn = infoText.replaceAll('shortDescription', 'Short description');
   }
   if (infoText.split(' ')[0] === '"bannerImg"') {
-    textToReturn = infoText.replaceAll('bannerImg', 'Banner image');
+    textToReturn = 'Banner image URL is not valid';
   }
   const textNoQuotes = textToReturn.replaceAll('"', '');
   return textNoQuotes.charAt(0).toUpperCase() + textNoQuotes.slice(1) + '!';

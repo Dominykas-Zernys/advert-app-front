@@ -52,7 +52,7 @@ export const advertStyles = [
       primary: '#a13028',
       secondary: '#6f73a7',
       textColor: 'white',
-      border: '1px solid #a13028',
+      border: '1px solid #6f73a7',
     },
     background: {
       border: '',
@@ -356,7 +356,7 @@ export const advertStyles = [
       primary: '#cfcfcf',
       secondary: '#ffffff',
       textColor: '#000000',
-      border: '2px dashed black',
+      border: '1px dashed black',
     },
     background: {
       border: '2px dashed black',

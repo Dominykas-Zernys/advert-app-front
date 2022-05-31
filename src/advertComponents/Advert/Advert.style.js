@@ -1,10 +1,10 @@
 import { Link } from 'react-router-dom';
 import styled from 'styled-components';
+import { pageColors } from '../../helpers/pageColors';
 
 export const Ad = styled.div`
   border-radius: 2rem;
   color: ${(props) => props.adstyle.banner.textColor};
-  font-family: ${(props) => props.adstyle.font};
   height: 20em;
   margin: 1rem;
   overflow: hidden;
@@ -55,11 +55,11 @@ export const Ad = styled.div`
 `;
 
 export const WrapperLink = styled(Link)`
-  background-color: ${(props) => props.adstyle.banner.primary};
+  background-color: #123c6939;
   box-sizing: border-box;
   display: flex;
   flex-direction: column;
-  font-family: ${(props) => props.adstyle.font};
+  font-family: 'Open Sans', sans-serif;
   height: 100%;
   padding: 2rem;
   width: 100%;

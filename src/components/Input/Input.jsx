@@ -7,7 +7,13 @@ const Input = ({ labelText, type, inputValue, setInputValue, height, placeholder
     <S.InputWrapper className={`${type}-wrapper`}>
       <S.Label>{labelText}</S.Label>
       {type === 'textarea' ? (
-        <S.TextArea placeholder={placeholder} value={inputValue} height={height} onChange={(e) => setInputValue(e.target.value)}></S.TextArea>
+        <S.TextArea
+          maxLength={maxLength}
+          placeholder={placeholder}
+          value={inputValue}
+          height={height}
+          onChange={(e) => setInputValue(e.target.value)}
+        ></S.TextArea>
       ) : (
         <S.Input
           className={placeholder === 'Tel' ? 'phone' : ''}
