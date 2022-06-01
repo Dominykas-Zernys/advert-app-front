@@ -9,6 +9,7 @@ export const Main = styled.main`
   }
 
   @media only screen and (max-width: 425px) {
+    height: 100%;
     padding: 1rem 0;
   }
 `;

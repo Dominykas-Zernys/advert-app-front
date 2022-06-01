@@ -1,7 +1,7 @@
 import React, { useContext } from 'react';
 import * as S from './Navigation.style';
 import Wrapper from '../Wrapper/Wrapper';
-import { Link, NavLink } from 'react-router-dom';
+import { Link, NavLink, useNavigate } from 'react-router-dom';
 import PageButton from '../../UI/PageButton/PageButton';
 import { AuthContext } from '../../helpers/AuthContext';
 
@@ -44,6 +44,7 @@ const Navigation = () => {
               <PageButton
                 handleClick={() => {
                   logout();
+                  window.location.reload();
                 }}
               >
                 Logout

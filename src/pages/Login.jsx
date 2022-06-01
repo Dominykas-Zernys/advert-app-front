@@ -63,8 +63,8 @@ const Login = () => {
           In order to post new adverts, please login. If you don't have an account, you can register <Link to='/register'>here</Link>.
         </Text>
         <Form type='login' submitHandler={formSubmit} changeHandler={restartInfoText}>
-          <Input value={email} setInputValue={setEmail} type='text' labelText='Enter your email:' />
-          <Input value={password} setInputValue={setPassword} type='password' labelText='Enter your password:' />
+          <Input inputValue={email} setInputValue={setEmail} type='text' labelText='Enter your email:' />
+          <Input inputValue={password} setInputValue={setPassword} type='password' labelText='Enter your password:' />
           <PageButton>Let's go!</PageButton>
         </Form>
         {submitFail && <InfoText color={pageColors.danger}>{failText}</InfoText>}

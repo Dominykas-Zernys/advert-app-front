@@ -12,21 +12,23 @@ export const PageBtn = styled.button`
   padding: 1rem 1.5rem;
   transition: all 0.3s;
 
-  &.back-to-home {
-    position: absolute;
+  &.small-button {
     padding: 0.5rem;
-    top: 4rem;
+  }
 
-    @media only screen and (max-width: 425px) {
-      top: 7rem;
-      width: 80%;
-      left: 10%;
+  &.delete-btn {
+    padding: 0.5rem;
+    background-color: ${pageColors.danger};
+
+    &:hover {
+      background-color: ${pageColors.danger};
+      opacity: 0.7;
     }
   }
 
   @media only screen and (max-width: 425px) {
     font-size: 1.5rem;
-    top: 0;
+    top: 100%;
     width: 100%;
   }
 
