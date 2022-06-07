@@ -32,7 +32,8 @@ There are 8 pages in total created on this React application:
 
 - Everyone can see the Advert page;
 - After selecting advert and clicking on its banner from home or user page, you will see the corresponding advert page with its full description, main image and contacts;
-- Clicking on contacts here will also copy them to your clipboard.
+- Clicking on contacts here will also copy them to your clipboard;
+- You can delete the advert in this page if you are the creator.
 
 ### User:
 
@@ -58,9 +59,9 @@ There are 8 pages in total created on this React application:
 
 ## Other information
 
-- There are 21 components used in total in this application. Some were designed with the use of storybook component explorer. There are also 6 helper files with various functions and variables;
+- There are 24 components used in total in this application. Some were designed with the use of storybook component explorer. There are also 6 helper files with various functions and variables;
 - Application uses UseState, UseEffect, UseContext, UseNavigate and UseParams hooks;
-- Dotenv, react-router-dom and storybook node packages were installed along with all the necessary React packages;
+- Dotenv, react-router-dom, react-icons and storybook node packages were installed along with all the necessary React packages;
 - The application is created with full responsive design for all screen sizes.
 
 ## How to use
