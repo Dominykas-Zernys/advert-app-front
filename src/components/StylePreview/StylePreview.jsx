@@ -1,23 +1,23 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import * as S from './StylePreview.style';
+import * as Styled from './StylePreview.style';
 import { capitalize } from '../../helpers/miscFunctions';
 
 const StylePreview = ({ name, bannerImg, pageImg }) => {
   return (
-    <S.PreviewWrapper>
-      <S.StyleType>{capitalize(name)}</S.StyleType>
-      <S.PreviewFlex>
+    <Styled.PreviewWrapper>
+      <Styled.StyleType>{capitalize(name)}</Styled.StyleType>
+      <Styled.PreviewFlex>
         <div>
-          <S.Img src={bannerImg} />
-          <S.previewCaption>Banner</S.previewCaption>
+          <Styled.Img src={bannerImg} />
+          <Styled.PreviewCaption>Banner</Styled.PreviewCaption>
         </div>
         <div>
-          <S.Img src={pageImg} />
-          <S.previewCaption>Full advert</S.previewCaption>
+          <Styled.Img src={pageImg} />
+          <Styled.PreviewCaption>Full advert</Styled.PreviewCaption>
         </div>
-      </S.PreviewFlex>
-    </S.PreviewWrapper>
+      </Styled.PreviewFlex>
+    </Styled.PreviewWrapper>
   );
 };
 

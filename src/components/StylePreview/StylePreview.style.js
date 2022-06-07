@@ -42,7 +42,7 @@ export const Img = styled.img`
   }
 `;
 
-export const previewCaption = styled.h4`
+export const PreviewCaption = styled.h4`
   color: #979797;
   padding: 0.5rem 0;
 `;

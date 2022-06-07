@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import PropTypes from 'prop-types';
-import * as S from './AdvertsGrid.style';
+import * as Styled from './AdvertsGrid.style';
 import Advert from '../../advertComponents/Advert/Advert';
 
 const AdvertsGrid = ({ adverts, searchValue, currentCategory }) => {
@@ -28,13 +28,13 @@ const AdvertsGrid = ({ adverts, searchValue, currentCategory }) => {
 
   return (
     <>
-      <S.Grid>
+      <Styled.Grid>
         {advertsToShow.map((ad) => (
           <Advert key={ad.id} adInfo={ad} />
         ))}
-      </S.Grid>
+      </Styled.Grid>
       {adverts.length > 12 && (
-        <S.NumbersWrapper
+        <Styled.NumbersWrapper
           className='page-numbers-wrapper'
           value={currentPage}
           onChange={(e) => {
@@ -54,7 +54,7 @@ const AdvertsGrid = ({ adverts, searchValue, currentCategory }) => {
               </div>
             )
           )}
-        </S.NumbersWrapper>
+        </Styled.NumbersWrapper>
       )}
     </>
   );

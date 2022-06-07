@@ -1,13 +1,13 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import Wrapper from '../Wrapper/Wrapper';
-import * as S from './Main.style';
+import * as Styled from './Main.style';
 
 const Main = ({ children }) => {
   return (
-    <S.Main>
+    <Styled.Main>
       <Wrapper>{children}</Wrapper>
-    </S.Main>
+    </Styled.Main>
   );
 };
 

@@ -1,6 +1,5 @@
 import React, { useContext, useState } from 'react';
-import PropTypes from 'prop-types';
-import * as S from './MobileNavLinks.style';
+import * as Styled from './MobileNavLinks.style';
 import { Link, NavLink } from 'react-router-dom';
 import { AuthContext } from '../../helpers/AuthContext';
 import PageButton from '../../UI/PageButton/PageButton';
@@ -12,8 +11,8 @@ const MobileNavLinks = () => {
   const { isLoggedIn, logout } = useContext(AuthContext);
 
   return (
-    <S.Nav>
-      <S.FlexNav>
+    <Styled.Nav>
+      <Styled.FlexNav>
         <FiMenu
           size='4rem'
           color='black'
@@ -21,7 +20,7 @@ const MobileNavLinks = () => {
             setMenuOpen((prevState) => !prevState);
           }}
         />
-        <S.ImgWrapper
+        <Styled.ImgWrapper
           onClick={() => {
             setMenuOpen(false);
           }}
@@ -29,10 +28,10 @@ const MobileNavLinks = () => {
           <Link to='/'>
             <img src={'img/logo.jpeg'} alt='AY logo' />
           </Link>
-        </S.ImgWrapper>
-      </S.FlexNav>
+        </Styled.ImgWrapper>
+      </Styled.FlexNav>
       {menuOpen && (
-        <S.HamburgerMenu
+        <Styled.HamburgerMenu
           onClick={() => {
             setMenuOpen(false);
           }}
@@ -71,9 +70,9 @@ const MobileNavLinks = () => {
               </PageButton>
             </>
           )}
-        </S.HamburgerMenu>
+        </Styled.HamburgerMenu>
       )}
-    </S.Nav>
+    </Styled.Nav>
   );
 };
 

@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import PropTypes from 'prop-types';
-import * as S from './Advert.style';
+import * as Styled from './Advert.style';
 import { advertStyles } from '../advertStyles';
 import { capitalize } from '../../helpers/miscFunctions';
 
@@ -50,8 +50,8 @@ const Advert = ({ adInfo }) => {
 
   return (
     adStyle && (
-      <S.Ad adstyle={adStyle}>
-        <S.WrapperLink imagesrc={adInfo.imageSrc} adstyle={adStyle} to={'/advert/' + adInfo.id}>
+      <Styled.Ad adstyle={adStyle}>
+        <Styled.WrapperLink imagesrc={adInfo.imageSrc} adstyle={adStyle} to={'/advert/' + adInfo.id}>
           <div className='title'>
             <h3 className='title-header'>{capitalize(adInfo.title)}</h3>{' '}
             <div className='contacts'>
@@ -68,8 +68,8 @@ const Advert = ({ adInfo }) => {
           <div className='content'>
             <p className='short-description'>{capitalize(adInfo.shortDescription)}</p>
           </div>
-        </S.WrapperLink>
-      </S.Ad>
+        </Styled.WrapperLink>
+      </Styled.Ad>
     )
   );
 };

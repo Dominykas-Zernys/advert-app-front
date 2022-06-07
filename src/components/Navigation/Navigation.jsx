@@ -1,17 +1,17 @@
-import React, { useContext } from 'react';
-import * as S from './Navigation.style';
+import React from 'react';
+import * as Styled from './Navigation.style';
 import Wrapper from '../Wrapper/Wrapper';
 import NavLinks from '../NavLInks/NavLinks';
 import MobileNavLinks from '../MobileNavLinks/MobileNavLinks';
 
 const Navigation = () => {
   return (
-    <S.Header>
+    <Styled.Header>
       <Wrapper>
         <NavLinks />
         <MobileNavLinks />
       </Wrapper>
-    </S.Header>
+    </Styled.Header>
   );
 };
 

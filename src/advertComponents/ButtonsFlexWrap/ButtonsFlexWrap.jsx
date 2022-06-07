@@ -1,9 +1,9 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import * as S from './ButtonsFlexWrap.style';
+import * as Styled from './ButtonsFlexWrap.style';
 
 const ButtonsFlexWrap = ({ children }) => {
-  return <S.ButtonsFlex>{children}</S.ButtonsFlex>;
+  return <Styled.ButtonsFlex>{children}</Styled.ButtonsFlex>;
 };
 
 ButtonsFlexWrap.propTypes = {

@@ -1,12 +1,12 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import * as S from './PageButton.style';
+import * as Styled from './PageButton.style';
 
 const PageButton = ({ children, handleClick, className = '' }) => {
   return (
-    <S.PageBtn className={className} onClick={handleClick}>
+    <Styled.PageBtn className={className} onClick={handleClick}>
       {children}
-    </S.PageBtn>
+    </Styled.PageBtn>
   );
 };
 

@@ -1,9 +1,9 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import * as S from './Wrapper.style';
+import * as Styled from './Wrapper.style';
 
 const Wrapper = ({ children }) => {
-  return <S.Wrap>{children}</S.Wrap>;
+  return <Styled.Wrap>{children}</Styled.Wrap>;
 };
 
 Wrapper.propTypes = {

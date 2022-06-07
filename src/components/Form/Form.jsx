@@ -1,12 +1,12 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import * as S from './Form.style';
+import * as Styled from './Form.style';
 
 const Form = ({ children, submitHandler, type, changeHandler }) => {
   return (
-    <S.Form className={type} onSubmit={submitHandler} onChange={changeHandler}>
+    <Styled.Form className={type} onSubmit={submitHandler} onChange={changeHandler}>
       {children}
-    </S.Form>
+    </Styled.Form>
   );
 };
 

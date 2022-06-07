@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import PropTypes from 'prop-types';
-import * as S from './FullAdvert.style';
+import * as Styled from './FullAdvert.style';
 import { advertStyles } from '../advertStyles';
 import { capitalize } from '../../helpers/miscFunctions';
 
@@ -46,27 +46,27 @@ const FullAdvert = ({ adInfo }) => {
 
   return (
     adStyle && (
-      <S.AdWrapper adStyle={adStyle}>
-        <S.TitleWrapper>
-          <S.Title className='container' adStyle={adStyle}>
+      <Styled.AdWrapper adStyle={adStyle}>
+        <Styled.TitleWrapper>
+          <Styled.Title className='container' adStyle={adStyle}>
             {capitalize(adInfo.title)}
-          </S.Title>
-        </S.TitleWrapper>
-        <S.ContactsWrapper>
-          <S.Contact onClick={copyPhone} data-id={adInfo.phone} className='container' adStyle={adStyle}>
+          </Styled.Title>
+        </Styled.TitleWrapper>
+        <Styled.ContactsWrapper>
+          <Styled.Contact onClick={copyPhone} data-id={adInfo.phone} className='container' adStyle={adStyle}>
             {phoneCopied ? 'phone copied!' : `Tel.: +${adInfo.phone}`}
-          </S.Contact>
-          <S.Contact onClick={copyEmail} data-id={adInfo.email} className='container' adStyle={adStyle}>
+          </Styled.Contact>
+          <Styled.Contact onClick={copyEmail} data-id={adInfo.email} className='container' adStyle={adStyle}>
             {emailCopied ? 'email copied!' : `Email: ${adInfo.email}`}
-          </S.Contact>
-        </S.ContactsWrapper>
-        <S.ContentWrapper>
-          <S.Description className='container' adStyle={adStyle}>
+          </Styled.Contact>
+        </Styled.ContactsWrapper>
+        <Styled.ContentWrapper>
+          <Styled.Description className='container' adStyle={adStyle}>
             {capitalize(adInfo.description)}
-          </S.Description>
-          <S.Img className='container' adStyle={adStyle} imageSrc={adInfo.imageSrc} />
-        </S.ContentWrapper>
-      </S.AdWrapper>
+          </Styled.Description>
+          <Styled.Img className='container' adStyle={adStyle} imageSrc={adInfo.imageSrc} />
+        </Styled.ContentWrapper>
+      </Styled.AdWrapper>
     )
   );
 };

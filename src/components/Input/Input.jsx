@@ -1,21 +1,21 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import * as S from './Input.style';
+import * as Styled from './Input.style';
 
 const Input = ({ labelText, type, inputValue, setInputValue, height, placeholder, maxLength }) => {
   return (
-    <S.InputWrapper className={`${type}-wrapper`}>
-      <S.Label>{labelText}</S.Label>
+    <Styled.InputWrapper className={`${type}-wrapper`}>
+      <Styled.Label>{labelText}</Styled.Label>
       {type === 'textarea' ? (
-        <S.TextArea
+        <Styled.TextArea
           maxLength={maxLength}
           placeholder={placeholder}
           value={inputValue}
           height={height}
           onChange={(e) => setInputValue(e.target.value)}
-        ></S.TextArea>
+        ></Styled.TextArea>
       ) : (
-        <S.Input
+        <Styled.Input
           className={placeholder === 'Tel' ? 'phone' : ''}
           placeholder={placeholder}
           value={inputValue}
@@ -24,13 +24,13 @@ const Input = ({ labelText, type, inputValue, setInputValue, height, placeholder
         />
       )}
       {type === 'textarea' && (
-        <S.TextAreaCount inputLength={inputValue.length} maxLength={maxLength}>
+        <Styled.TextAreaCount inputLength={inputValue.length} maxLength={maxLength}>
           Symbols total: <span className='current-count'>{inputValue.length}</span>
           <span>/{maxLength}</span>
-        </S.TextAreaCount>
+        </Styled.TextAreaCount>
       )}
       {placeholder === 'Tel' ? <span className='plus'>+</span> : ''}
-    </S.InputWrapper>
+    </Styled.InputWrapper>
   );
 };
 

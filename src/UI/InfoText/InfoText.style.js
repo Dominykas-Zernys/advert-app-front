@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 import { pageColors } from '../../helpers/pageColors';
 
-export const infoTextWrapper = styled.div`
+export const InfoTextWrapper = styled.div`
   align-items: center;
   display: flex;
   justify-content: center;
@@ -13,7 +13,7 @@ export const infoTextWrapper = styled.div`
   }
 `;
 
-export const infoTextPar = styled.p`
+export const InfoTextPar = styled.p`
   color: ${({ color }) => color};
   margin: auto;
 

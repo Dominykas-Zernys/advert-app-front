@@ -1,9 +1,9 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import * as S from './FilterWrapper.style';
+import * as Styled from './FilterWrapper.style';
 
 const FilterWrapper = ({ children }) => {
-  return <S.FilterWrap>{children}</S.FilterWrap>;
+  return <Styled.FilterWrap>{children}</Styled.FilterWrap>;
 };
 
 FilterWrapper.propTypes = { children: PropTypes.node };

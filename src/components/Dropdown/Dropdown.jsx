@@ -1,13 +1,13 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import * as S from './Dropdown.style';
+import * as Styled from './Dropdown.style';
 import { capitalize } from '../../helpers/miscFunctions';
 
 const Dropdown = ({ placeholder, labelText, inputValue, setInputValue, options }) => {
   return (
-    <S.DropdownWrapper>
-      <S.Label>{labelText}</S.Label>
-      <S.Dropdown value={inputValue} onChange={(e) => setInputValue(e.target.value)}>
+    <Styled.DropdownWrapper>
+      <Styled.Label>{labelText}</Styled.Label>
+      <Styled.Dropdown value={inputValue} onChange={(e) => setInputValue(e.target.value)}>
         <option value='' defaultValue disabled hidden>
           {placeholder}
         </option>
@@ -16,8 +16,8 @@ const Dropdown = ({ placeholder, labelText, inputValue, setInputValue, options }
             {capitalize(opt.name)}
           </option>
         ))}
-      </S.Dropdown>
-    </S.DropdownWrapper>
+      </Styled.Dropdown>
+    </Styled.DropdownWrapper>
   );
 };
 

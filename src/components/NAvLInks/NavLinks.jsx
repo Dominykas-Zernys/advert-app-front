@@ -1,6 +1,5 @@
 import React, { useContext } from 'react';
-import PropTypes from 'prop-types';
-import * as S from './NavLinks.style';
+import * as Styled from './NavLinks.style';
 import { Link, NavLink } from 'react-router-dom';
 import { AuthContext } from '../../helpers/AuthContext';
 import PageButton from '../../UI/PageButton/PageButton';
@@ -9,12 +8,12 @@ const NavLinks = () => {
   const { isLoggedIn, logout } = useContext(AuthContext);
 
   return (
-    <S.Nav>
-      <S.ImgWrapper>
+    <Styled.Nav>
+      <Styled.ImgWrapper>
         <Link to='/'>
           <img src={'img/logo.jpeg'} alt='AY logo' />
         </Link>
-      </S.ImgWrapper>
+      </Styled.ImgWrapper>
       <NavLink className='nav-link' activeclassname='active' to='/'>
         Home
       </NavLink>
@@ -49,7 +48,7 @@ const NavLinks = () => {
           </PageButton>
         </>
       )}
-    </S.Nav>
+    </Styled.Nav>
   );
 };
 

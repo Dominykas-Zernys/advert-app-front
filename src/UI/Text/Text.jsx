@@ -1,12 +1,12 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import * as S from './Text.style';
+import * as Styled from './Text.style';
 
 const Text = ({ children, textIndent = true, fontSize = '1.15rem', center = false }) => {
   return (
-    <S.P fontSize={fontSize} textIndent={textIndent} center={center}>
+    <Styled.P fontSize={fontSize} textIndent={textIndent} center={center}>
       {children}
-    </S.P>
+    </Styled.P>
   );
 };
 
