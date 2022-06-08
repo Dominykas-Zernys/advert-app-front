@@ -15,13 +15,13 @@ const About = () => {
 
   // Array to map out images for style preview
   const previewArr = [
-    { name: 'pastel', banner: 'img/banner1.PNG', full: 'img/page1.PNG' },
-    { name: 'currant', banner: 'img/banner2.PNG', full: 'img/page2.PNG' },
-    { name: 'retro', banner: 'img/banner3.PNG', full: 'img/page3.PNG' },
-    { name: 'elegant', banner: 'img/banner4.PNG', full: 'img/page4.PNG' },
-    { name: 'playful', banner: 'img/banner5.PNG', full: 'img/page5.PNG' },
-    { name: 'minimal', banner: 'img/banner6.PNG', full: 'img/page6.PNG' },
-    { name: 'social media', banner: 'img/banner7.PNG', full: 'img/page7.PNG' },
+    { name: 'pastel', banner: 'img/banner_1.PNG', full: 'img/page1.PNG' },
+    { name: 'currant', banner: 'img/banner_2.PNG', full: 'img/page2.PNG' },
+    { name: 'retro', banner: 'img/banner_3.PNG', full: 'img/page3.PNG' },
+    { name: 'elegant', banner: 'img/banner_4.PNG', full: 'img/page4.PNG' },
+    { name: 'playful', banner: 'img/banner_5.PNG', full: 'img/page5.PNG' },
+    { name: 'minimal', banner: 'img/banner_6.PNG', full: 'img/page6.PNG' },
+    { name: 'social media', banner: 'img/banner_7.PNG', full: 'img/page7.PNG' },
     { name: 'letter', banner: 'img/banner8.PNG', full: 'img/page8.PNG' },
   ];
 
