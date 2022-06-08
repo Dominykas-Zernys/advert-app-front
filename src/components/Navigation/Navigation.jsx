@@ -1,7 +1,7 @@
 import React from 'react';
 import * as Styled from './Navigation.style';
 import Wrapper from '../Wrapper/Wrapper';
-import NavLinks from '../NavLInks/NavLinks';
+import NavLinks from '../NavLinks/NavLinks';
 import MobileNavLinks from '../MobileNavLinks/MobileNavLinks';
 
 const Navigation = () => {

@@ -82,9 +82,9 @@ const About = () => {
           </Link>{' '}
           page. The full version is shown when your advert banner is clicked on.
         </Text>
-        {/* {previewArr.map((ad) => (
+        {previewArr.map((ad) => (
           <StylePreview key={ad.name} name={ad.name} bannerImg={ad.banner} pageImg={ad.full} />
-        ))} */}
+        ))}
       </Container>
     </Main>
   );
